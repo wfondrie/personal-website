@@ -1,0 +1,22 @@
+{{ partial "header.html" . }}
+
+<section id=content>
+  <img class="avatar" src="{{ `/images/pic.jpg` | relURL }}">  
+  
+  {{ .Content }}
+<!--
+  <hr>
+  <h1><a href="/posts/">Recent Posts</a></h1>
+    
+
+  <ul class="posts_listing sm">
+    {{ range (where .Data.Pages.ByDate.Reverse "Section" "=" "post") }}
+      <li>
+        <h5><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+        <time id="date">{{ .Date.Format (.Site.Params.dateform | default "2006/01/02") }}</time>
+      </li>
+    {{ end }}
+  </ul>
+</section>
+-->
+{{ partial "footer.html" . }}

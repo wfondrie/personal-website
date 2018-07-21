@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  {{ if .Site.Params.description }}<meta name="description" content="{{ .Site.Params.description }}">{{ end }}
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <title>
+    {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+    {{ if eq $url "/" }}
+    {{ .Site.Title }}
+    {{ else }}
+    {{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Title }} {{ end }}
+    {{ end }}
+  </title>
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  <link rel="stylesheet" href="{{ `/css/fonts.css` | relURL }}" />
+  <link rel="stylesheet" href="{{ `/css/style.css` | relURL }}" />
+  
+  <!-- Font Awesome -->
+  <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
+  <!-- Academicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.2/css/academicons.css" integrity="sha256-HOzil5GkY67c41s3QwKko6KhO4wdxQ6b8aOccgQXVnE=" crossorigin="anonymous" />
+ 
+  <!-- Custom Styles -->
+  {{ partial "customStyle.html" . }}
+  <link rel="stylesheet" href="{{ `/css/custom.css` | relURL }}" />
+  <link rel="stylesheet" href="{{ `/css/syntax.css` | relURL }}" />
+
+
+  {{ if .RSSLink }}
+  <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  {{ end }}
+</head>
+
+<body>
+<section id=nav>
+    
+  <h1 id="top" align="center">{{ .Site.Params.sitename }}</h1>
+  
+  <ul id="horizontal-list">
+    {{ range .Site.Menus.main }}
+    <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+    {{ end }}
+  </ul>
+  
+  <hr class="headLine">
+  
+  <ul id="horizontal-list">
+    {{ partial "social.html" . }}
+   <!-- <li><a href="/index.xml"><i class="fas fa-rss icon-link" aria-hidden="true"></i></a></li>-->
+  </ul>
+  
+</section>

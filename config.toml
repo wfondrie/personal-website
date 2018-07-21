@@ -1,0 +1,57 @@
+baseurl = "/"
+publishDir = "docs"
+title = ""
+author = "Will Fondrie"
+canonifyurls = true
+languagecode = "en"
+theme = "hugo-tanka"
+
+googleAnalytics = ""
+disqusShortname = ""
+disable_mathjax = false
+
+pygmentscodefences = true
+pygmentsUseClasses = true
+
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+[permalinks]
+  post = "/:year/:month/:title/"
+
+[params]
+  sitename = "Will Fondrie"
+  a_color = "#80B1D3"
+
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "Pubs"
+    url = "/pubs/"
+    weight = 2
+
+[[menu.main]]
+    name = "Talks"
+    url = "/talks/"
+    weight = 3
+    
+#[[menu.main]]
+#    name = "Software"
+#    url = "/software/"
+#    weight = 3
+
+#[[menu.main]]
+#    name = "Blog"
+#    url = "/post/"
+#    weight = 4
+
+    
+## Social Accounts
+[params.social]
+    github = "wfondrie"
+    linkedin = "wfondrie"
+    twitter = "wfondrie"
+    gScholar = "sagQuRkAAAAJ&hl" # Google Scholar
+    #stackoverflow = "<username>"

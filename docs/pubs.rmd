@@ -1,0 +1,97 @@
+---
+---
+
+# Peer-Reviewed Publications
+```{r, echo=F, warning=F, results='asis'}
+# Load packages ----------------------------------------------------------------
+suppressMessages(library(tidyverse, quietly = T)) # hide startup message
+library(tidytext, quietly = T)
+library(httr, quietly = T)
+library(stringr, quietly = T)
+library(xml2, quietly = T)
+
+# Query pubmed using Entrez eutils ----------------------------------------------
+queryBase <- c("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/")
+
+# get UIDs for articles
+uids <- GET(paste0(queryBase, "esearch.fcgi?db=pubmed&term=fondrie[author]"))
+
+# extract UIDs from xml
+xml <- content(uids)
+nodes <- xml_find_all(xml, "//Id")
+uidStr <- paste(xml_text(nodes), collapse = ",")
+
+# Pub data ---------------------------------------------------------------------
+pubs <- content(GET(paste0(queryBase,
+                    "efetch.fcgi?db=pubmed&id=",
+                    uidStr,
+                    "&retmode=xml")))
+
+pubDat <- tibble(title = xml_text(xml_find_all(pubs, "//ArticleTitle")),
+                 year = xml_text(xml_find_all(pubs, "//ArticleDate/Year[1]")),
+                 month = xml_text(xml_find_all(pubs, "//ArticleDate/Month[1]")),
+                 day = xml_text(xml_find_all(pubs, "//ArticleDate/Day[1]")),
+                 journal = xml_text(xml_find_all(pubs, "//Journal/ISOAbbreviation")),
+                 pmid = xml_text(xml_find_all(pubs, "//MedlineCitation/PMID")),
+                 doi = xml_text(xml_find_all(pubs, "//ELocationID[@EIdType='doi']"))) %>%
+    mutate(journal = str_replace_all(journal, "\\.", ""),
+           articleNum = 1:length(journal),
+           journalLink = paste0("https://doi.org/", doi),
+           pubmedLink = paste0("https://www.ncbi.nlm.nih.gov/pubmed/", pmid))
+
+
+# Authors for each article -----------------------------------------------------
+cofirst <- c("26378940")
+
+authors <- tibble(path = xml_path(xml_find_all(pubs, "//LastName")),
+                  lastName = xml_text(xml_find_all(pubs, "//LastName")),
+                  initials = xml_text(xml_find_all(pubs, "//Initials"))) %>%
+    mutate(articleNum = as.numeric(str_match(path, "PubmedArticle\\[(.)\\]")[ , 2]),
+           fullName = paste(lastName, initials),
+           fullName = ifelse(lastName == "Fondrie", 
+                             paste0("**", fullName, "**"),
+                             fullName)) %>%
+    group_by(articleNum) %>%
+    summarize(authors = paste(fullName, collapse = ", "))
+
+citations <- pubDat %>% full_join(authors, by = "articleNum")
+
+notIndexed <- tibble(title = c("Optimized surface acoustic wave nebulization facilitates bacterial phenotyping."),
+                     year = "2018",
+                     month = "4",
+                     day = "1",
+                     journal = "Int J Mass Spectrom",
+                     pmid = NA,
+                     doi = "10.1016/j.ijms.2017.09.007",
+                     articleNum = NA,
+                     journalLink = "https://doi.org/10.1016/j.ijms.2017.09.007",
+                     pubmedLink = NA,
+                     authors = "Liang T, Schneider T, Yoon SH, Oyler BL, Leung LM, **Fondrie WE**, Yen G, Huang Y, Ernst RK, Nilsson E, Goodlett DR")
+
+citations <- citations %>% rbind(notIndexed)
+# Prepare md output ------------------------------------------------------------
+output <- citations %>%
+    arrange(desc(year), desc(month), desc(day)) %>%
+    mutate(md = paste0("+ ", authors, ". (", year, ") ", title, 
+                       " *", journal, ".* PMID: ", pmid, 
+                       " [[PubMed]](", pubmedLink,") ",
+                       "[[Journal Site]](", journalLink, ")  \n"),
+           md = ifelse(is.na(pmid), 
+                       paste0("+ ", authors, ". (", year, ") ", title, 
+                              " *", journal, "* ",
+                              "[[Journal Site]](", journalLink, ")  \n"),
+                       md))
+
+years <- unique(output$year)
+
+noRet <- lapply(years, function(y, dat) {
+    cat("\n")
+    cat(paste0("## ", y, "  \n"))
+    
+    op <- dat %>%
+        filter(year == y)
+    
+    cat(op$md)
+}, output)
+
+```

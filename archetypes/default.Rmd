@@ -1,0 +1,6 @@
+---
+title: "{{ replace .Name "-" " " | title }}"
+author: "Will Fondrie"
+date: {{ .Date }}
+draft: true
+---

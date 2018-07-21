@@ -1,0 +1,93 @@
+a:hover { 
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.posts_listing li a:hover,#nav a:hover {
+  text-decoration: none;
+}
+
+hr {
+  width: 50%;
+  height: 1px;
+  background:#738491;
+  margin: 5px auto;
+}
+
+.headLine {
+  width: 100%;
+  height: 1px;
+  background:#738491;
+  margin: 5px auto;
+}
+
+.sm {
+  margin: 20px 0 10px;
+  text-indent: 0;
+}
+
+.sm li {
+  margin: 0 0 10px 20px;
+}
+
+ul {
+    text-indent: -0.88em;
+    margin-left: 0.88em;
+    position: relative;
+}
+
+ul li:before {
+   vertical-align: text-bottom; 
+}
+
+.posts_listing {
+    text-indent: 0;
+    margin-left: 0;
+}
+
+li {
+    margin-top: 10px;
+}
+
+#content {
+  text-align: left;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 0 10px;
+}
+
+.avatar {
+    border-radius: 50%;
+    max-width: 200px;
+    height: auto;
+    border: 3px solid #333;
+}
+
+b {
+  display: none;
+}
+
+pre{
+    background: #f7f7f7;
+    border-radius: 10px;
+}
+
+h1 {
+    line-height: 120%;
+}
+
+/* nav stuff */
+ul#horizontal-list {
+    display:table; 
+    margin:0 auto;
+    text-indent: 0em;
+} 
+	
+ul#horizontal-list li {
+	vertical-align: middle; 
+	text-align: center;
+}
+
