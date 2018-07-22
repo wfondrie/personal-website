@@ -1,9 +1,9 @@
 a:hover { 
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .posts_listing li a:hover,#nav a:hover {
@@ -89,5 +89,43 @@ ul#horizontal-list {
 ul#horizontal-list li {
 	vertical-align: middle; 
 	text-align: center;
+}
+
+/* nav links */
+/* see https://tympanus.net/codrops/2013/08/06/creative-link-effects/ */
+.effect a::before,
+.effect a::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.effect a::before {
+	margin-right: 5px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.effect a::after {
+	margin-left: 5px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+
+.effect a:hover::before,
+.effect a:hover::after,
+.effect a:focus::before,
+.effect a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
 }
 

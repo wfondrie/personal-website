@@ -45,7 +45,7 @@
     
   <h1 id="top" align="center">{{ .Site.Params.sitename }}</h1>
   
-  <ul id="horizontal-list">
+  <ul id="horizontal-list", class="effect">
     {{ range .Site.Menus.main }}
     <li><a href="{{ .URL }}">{{ .Name }}</a></li>
     {{ end }}
