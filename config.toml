@@ -6,7 +6,7 @@ canonifyurls = true
 languagecode = "en"
 theme = "hugo-tanka"
 
-googleAnalytics = ""
+googleAnalytics = "UA-78640578-1"
 disqusShortname = ""
 disable_mathjax = false
 
