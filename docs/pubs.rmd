@@ -28,9 +28,9 @@ pubs <- content(GET(paste0(queryBase,
                     "&retmode=xml")))
 
 pubDat <- tibble(title = xml_text(xml_find_all(pubs, "//ArticleTitle")),
-                 year = xml_text(xml_find_all(pubs, "//ArticleDate/Year[1]")),
-                 month = xml_text(xml_find_all(pubs, "//ArticleDate/Month[1]")),
-                 day = xml_text(xml_find_all(pubs, "//ArticleDate/Day[1]")),
+                 year = xml_text(xml_find_all(pubs, "//PubDate/Year[1]")),
+                 #month = xml_text(xml_find_all(pubs, "//ArticleDate/Month[1]")),
+                 #day = xml_text(xml_find_all(pubs, "//ArticleDate/Day[1]")),
                  journal = xml_text(xml_find_all(pubs, "//Journal/ISOAbbreviation")),
                  pmid = xml_text(xml_find_all(pubs, "//MedlineCitation/PMID")),
                  doi = xml_text(xml_find_all(pubs, "//ELocationID[@EIdType='doi']"))) %>%
@@ -58,8 +58,8 @@ citations <- pubDat %>% full_join(authors, by = "articleNum")
 
 notIndexed <- tibble(title = c("Optimized surface acoustic wave nebulization facilitates bacterial phenotyping."),
                      year = "2018",
-                     month = "4",
-                     day = "1",
+                     #month = "4",
+                     #day = "1",
                      journal = "Int J Mass Spectrom",
                      pmid = NA,
                      doi = "10.1016/j.ijms.2017.09.007",
@@ -69,9 +69,11 @@ notIndexed <- tibble(title = c("Optimized surface acoustic wave nebulization fac
                      authors = "Liang T, Schneider T, Yoon SH, Oyler BL, Leung LM, **Fondrie WE**, Yen G, Huang Y, Ernst RK, Nilsson E, Goodlett DR")
 
 citations <- citations %>% rbind(notIndexed)
+
 # Prepare md output ------------------------------------------------------------
 output <- citations %>%
-    arrange(desc(year), desc(month), desc(day)) %>%
+    arrange(desc(year)) %>%
+    #arrange(desc(year), desc(month), desc(day)) %>%
     mutate(md = paste0("+ ", authors, ". (", year, ") ", title, 
                        " *", journal, ".* PMID: ", pmid, 
                        " [[PubMed]](", pubmedLink,") ",

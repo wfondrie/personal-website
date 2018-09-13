@@ -1,6 +1,6 @@
 baseurl = "/"
 publishDir = "docs"
-title = ""
+title = "Will Fondrie, a postdoc in the Noble lab at the UW"
 author = "Will Fondrie"
 canonifyurls = true
 languagecode = "en"
