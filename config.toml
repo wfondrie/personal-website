@@ -53,5 +53,5 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     github = "wfondrie"
     linkedin = "wfondrie"
     twitter = "wfondrie"
-    gScholar = "sagQuRkAAAAJ&hl" # Google Scholar
+    gScholar = "sagQuRkAAAAJ" # Google Scholar
     #stackoverflow = "<username>"
