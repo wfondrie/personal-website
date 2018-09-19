@@ -37,10 +37,10 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     url = "/talks/"
     weight = 3
     
-#[[menu.main]]
-#    name = "Software"
-#    url = "/software/"
-#    weight = 3
+[[menu.main]]
+    name = "Software"
+    url = "/software/"
+    weight = 3
 
 #[[menu.main]]
 #    name = "Blog"
