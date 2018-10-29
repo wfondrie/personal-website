@@ -6,7 +6,7 @@ My PhD research was performed under [Dudley Strickland](http://www.medschool.uma
 
 Here's a word cloud from the titles and abstracts of my publications (and a link to the [code](/wordcloud.html) used to generate it):  
 
-<img src="/wordcloud_files/wordcloud-1.png>  
+<img src="/wordcloud_files/figure-html/wordcloud-1.png">  
 
 Outside of science I enjoy good coffee, the outdoors, playing banjo, and riding my [fixed-gear](https://en.wikipedia.org/wiki/Fixed-gear_bicycle) around town. 
 
