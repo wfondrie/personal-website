@@ -1,0 +1,76 @@
+---
+---
+
+
+
+<p>Here’s the code to make my word cloud:</p>
+<pre class="r"><code># Code to make the word cloud below
+
+# Load packages ----------------------------------------------------------------
+suppressMessages(library(tidyverse, quietly = T)) # hide startup message
+library(tidytext, quietly = T)
+library(httr, quietly = T)
+library(xml2, quietly = T)
+library(wordcloud, quietly = T)
+
+set.seed(9621) # for reproducibility
+
+# Query pubmed using Entrez eutils ----------------------------------------------
+queryBase &lt;- c(&quot;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/&quot;)
+
+# get UIDs for articles
+uids &lt;- GET(paste0(queryBase, &quot;esearch.fcgi?db=pubmed&amp;term=fondrie[author]&quot;))
+
+# extract UIDs from xml
+xml &lt;- content(uids)
+nodes &lt;- xml_find_all(xml, &quot;//Id&quot;)
+uidStr &lt;- paste(xml_text(nodes), collapse = &quot;,&quot;)
+
+# get abstracts
+abstracts &lt;- GET(paste0(queryBase,
+                        &quot;efetch.fcgi?db=pubmed&amp;id=&quot;,
+                        uidStr,
+                        &quot;&amp;retmode=xml&quot;))
+
+# extract abstract text from xml
+absXml &lt;- content(abstracts)
+absNodes &lt;- xml_find_all(absXml, &quot;//Abstract&quot;)
+titleNodes &lt;- xml_find_all(absXml, &quot;//ArticleTitle&quot;)
+
+absTbl &lt;- tibble(text = paste(xml_text(titleNodes), xml_text(absNodes)),
+                 absNum = 1:length(absNodes))
+
+# Tokenize abstracts -----------------------------------------------------------
+data(&quot;stop_words&quot;) # words to remove, like &quot;and&quot; and &quot;the&quot;
+
+# add additional stop_words
+stop_words &lt;- tibble(word = c(&quot;ii&quot;, &quot;ru&quot;, &quot;2&quot;, &quot;10&quot;, &quot;100&quot;, &quot;000g&quot;,&quot;intra&quot;, &quot;ple&quot;, 
+                              &quot;tio2&quot;, &quot;ppii&quot;, &quot;zro2&quot;, &quot;ru&quot;), 
+                     lexicon = &quot;WEF&quot;) %&gt;% 
+  full_join(stop_words, by = c(&quot;word&quot;, &quot;lexicon&quot;))
+  
+
+wordTokens &lt;- absTbl %&gt;% 
+  unnest_tokens(word, text, token = &quot;words&quot;) %&gt;%
+  count(word, sort = T) %&gt;%
+  anti_join(stop_words, by = c(&quot;word&quot;))
+
+# Make word cloud --------------------------------------------------------------
+# adapted from: http://www.sthda.com/english/wiki/text-mining-and-word-cloud-fundamentals-in-r-5-simple-steps-you-should-know
+
+cols &lt;- colorRampPalette(c(&quot;black&quot;, &quot;steelblue&quot;))(8)
+
+wordcloud(words = wordTokens$word,
+          freq = wordTokens$n, 
+          scale = c(4, 0.25),
+          min.freq = 2,
+          max.words=500, 
+          random.order=F, 
+          rot.per=0.35, 
+          colors=cols)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:wordcloud"></span>
+<img src="/wordcloud_files/figure-html/wordcloud-1.png" alt="*A word cloud from the titles and abstracts of my publications*" width="624" />
+<p class="caption">
+Figure 1: <em>A word cloud from the titles and abstracts of my publications</em>
+</p>
+</div>

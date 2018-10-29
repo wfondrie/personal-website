@@ -16,8 +16,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/pubs/</guid>
-      <description>Peer-Reviewed Publications 2018  Au DT, Arai AL, Fondrie WE, Muratoglu SC, Strickland DK. (2018) Role of the LDL Receptor-Related Protein 1 in Regulating Protease Activity and Signaling Pathways in the Vasculature. Curr Drug Targets. PMID: 29749311 [PubMed] [Journal Site]
- Liang T, Schneider T, Yoon SH, Oyler BL, Leung LM, Fondrie WE, Yen G, Huang Y, Ernst RK, Nilsson E, Goodlett DR. (2018) Optimized surface acoustic wave nebulization facilitates bacterial phenotyping.</description>
+      <description>Peer-Reviewed Publications 2018  Fondrie WE, Liang T, Oyler BL, Leung LM, Ernst RK, Strickland DK, Goodlett DR. (2018) Pathogen Identification Direct From Polymicrobial Specimens Using Membrane Glycolipids. Sci Rep. PMID: 30367087 [PubMed] [Journal Site]
+ Au DT, Ying Z, Hernández-Ochoa EO, Fondrie WE, Hampton B, Migliorini M, Galisteo R, Schneider MF, Daugherty A, Rateri DL, Strickland DK, Muratoglu SC. (2018) LRP1 (Low-Density Lipoprotein Receptor-Related Protein 1) Regulates Smooth Muscle Contractility by Modulating Ca2+ Signaling and Expression of Cytoskeleton-Related Proteins.</description>
     </item>
     
     <item>
@@ -37,6 +37,16 @@
       <guid>/talks/</guid>
       <description> Recent Talks  Detecting antibiotic resistance by MALDI-TOF analysis of bacterial membrane glycolipids. Fondrie WE, Leung LM, Strickland DK, Ernst RK, Goodlett DR. ASMS Annual Conference on Mass Spectrometry and Allied Topics. June 4, 2017. Indianapolis, IN
  LRP1 modulates TGF-β signaling in the descending thoracic aorta. Fondrie WE, Muratoglu SC, Hampton B, Migliorini M, Galisteo R, Strickland DK. UMB Molecular Medicine Research Retreat. October 6, 2016. Baltimore, MD  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/wordcloud/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/wordcloud/</guid>
+      <description>Here’s the code to make my word cloud:
+# Code to make the word cloud below # Load packages ---------------------------------------------------------------- suppressMessages(library(tidyverse, quietly = T)) # hide startup message library(tidytext, quietly = T) library(httr, quietly = T) library(xml2, quietly = T) library(wordcloud, quietly = T) set.seed(9621) # for reproducibility # Query pubmed using Entrez eutils ---------------------------------------------- queryBase &amp;lt;- c(&amp;quot;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/&amp;quot;) # get UIDs for articles uids &amp;lt;- GET(paste0(queryBase, &amp;quot;esearch.fcgi?db=pubmed&amp;amp;term=fondrie[author]&amp;quot;)) # extract UIDs from xml xml &amp;lt;- content(uids) nodes &amp;lt;- xml_find_all(xml, &amp;quot;//Id&amp;quot;) uidStr &amp;lt;- paste(xml_text(nodes), collapse = &amp;quot;,&amp;quot;) # get abstracts abstracts &amp;lt;- GET(paste0(queryBase, &amp;quot;efetch.</description>
     </item>
     
   </channel>

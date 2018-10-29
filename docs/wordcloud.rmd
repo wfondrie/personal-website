@@ -1,0 +1,72 @@
+---
+---
+Here's the code to make my word cloud:
+
+```{r wordcloud, warning = F, messages = F, fig.width=6.5, fig.height=6.5, fig.align='center', fig.cap="*A word cloud from the titles and abstracts of my publications*"}
+# Code to make the word cloud below
+
+# Load packages ----------------------------------------------------------------
+suppressMessages(library(tidyverse, quietly = T)) # hide startup message
+library(tidytext, quietly = T)
+library(httr, quietly = T)
+library(xml2, quietly = T)
+library(wordcloud, quietly = T)
+
+set.seed(9621) # for reproducibility
+
+# Query pubmed using Entrez eutils ----------------------------------------------
+queryBase <- c("https://eutils.ncbi.nlm.nih.gov/entrez/eutils/")
+
+# get UIDs for articles
+uids <- GET(paste0(queryBase, "esearch.fcgi?db=pubmed&term=fondrie[author]"))
+
+# extract UIDs from xml
+xml <- content(uids)
+nodes <- xml_find_all(xml, "//Id")
+uidStr <- paste(xml_text(nodes), collapse = ",")
+
+# get abstracts
+abstracts <- GET(paste0(queryBase,
+                        "efetch.fcgi?db=pubmed&id=",
+                        uidStr,
+                        "&retmode=xml"))
+
+# extract abstract text from xml
+absXml <- content(abstracts)
+absNodes <- xml_find_all(absXml, "//Abstract")
+titleNodes <- xml_find_all(absXml, "//ArticleTitle")
+
+absTbl <- tibble(text = paste(xml_text(titleNodes), xml_text(absNodes)),
+                 absNum = 1:length(absNodes))
+
+# Tokenize abstracts -----------------------------------------------------------
+data("stop_words") # words to remove, like "and" and "the"
+
+# add additional stop_words
+stop_words <- tibble(word = c("ii", "ru", "2", "10", "100", "000g","intra", "ple", 
+                              "tio2", "ppii", "zro2", "ru"), 
+                     lexicon = "WEF") %>% 
+  full_join(stop_words, by = c("word", "lexicon"))
+  
+
+wordTokens <- absTbl %>% 
+  unnest_tokens(word, text, token = "words") %>%
+  count(word, sort = T) %>%
+  anti_join(stop_words, by = c("word"))
+
+# Make word cloud --------------------------------------------------------------
+# adapted from: http://www.sthda.com/english/wiki/text-mining-and-word-cloud-fundamentals-in-r-5-simple-steps-you-should-know
+
+cols <- colorRampPalette(c("black", "steelblue"))(8)
+
+wordcloud(words = wordTokens$word,
+          freq = wordTokens$n, 
+          scale = c(4, 0.25),
+          min.freq = 2,
+          max.words=500, 
+          random.order=F, 
+          rot.per=0.35, 
+          colors=cols)
+
+```
+

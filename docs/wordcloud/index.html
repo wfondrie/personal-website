@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <title>
+    
+    
+      
+    
+  </title>
+  <link rel="canonical" href="/wordcloud/">
+
+  <link rel="stylesheet" href="/css/fonts.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  
+  
+  <link href="https://use.fontawesome.com/releases/v5.0.2/css/all.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.2/css/academicons.css" integrity="sha256-HOzil5GkY67c41s3QwKko6KhO4wdxQ6b8aOccgQXVnE=" crossorigin="anonymous" />
+ 
+  
+  <style>
+     
+    a:hover { 
+        color: #80B1D3; 
+    }
+    
+    .icon-link:hover {
+        color: #80B1D3;
+    }
+</style>
+  <link rel="stylesheet" href="/css/custom.css" />
+  <link rel="stylesheet" href="/css/syntax.css" />
+
+
+  
+</head>
+
+<body>
+<section id=nav>
+    
+  <h1 id="top" align="center">Will Fondrie</h1>
+  
+  <ul id="horizontal-list", class="effect">
+    
+    <li><a href="/">Home</a></li>
+    
+    <li><a href="/pubs/">Pubs</a></li>
+    
+    <li><a href="/software/">Software</a></li>
+    
+    <li><a href="/talks/">Talks</a></li>
+    
+  </ul>
+  
+  <hr class="headLine">
+  
+  <ul id="horizontal-list">
+    
+
+
+    <li><a href="https://scholar.google.com/citations?user=sagQuRkAAAAJ&hl=en&oi=sra"><i class="ai ai-google-scholar icon-link" aria-hidden="true"></i></a></li>
+
+
+    <li><a href="https://twitter.com/wfondrie"><i class="fab fa-twitter icon-link" aria-hidden="true"></i></a></li>
+
+
+    <li><a href="https://github.com/wfondrie"><i class="fab fa-github icon-link" aria-hidden="true"></i></a></li>
+
+
+    <li><a href="https://linkedin.com/in/wfondrie"><i class="fab fa-linkedin icon-link" aria-hidden="true"></i></a></li>
+
+
+
+   
+  </ul>
+  
+</section>
+
+
+<section id=content>
+  <p>Here’s the code to make my word cloud:</p>
+<pre class="r"><code># Code to make the word cloud below
+
+# Load packages ----------------------------------------------------------------
+suppressMessages(library(tidyverse, quietly = T)) # hide startup message
+library(tidytext, quietly = T)
+library(httr, quietly = T)
+library(xml2, quietly = T)
+library(wordcloud, quietly = T)
+
+set.seed(9621) # for reproducibility
+
+# Query pubmed using Entrez eutils ----------------------------------------------
+queryBase &lt;- c(&quot;https://eutils.ncbi.nlm.nih.gov/entrez/eutils/&quot;)
+
+# get UIDs for articles
+uids &lt;- GET(paste0(queryBase, &quot;esearch.fcgi?db=pubmed&amp;term=fondrie[author]&quot;))
+
+# extract UIDs from xml
+xml &lt;- content(uids)
+nodes &lt;- xml_find_all(xml, &quot;//Id&quot;)
+uidStr &lt;- paste(xml_text(nodes), collapse = &quot;,&quot;)
+
+# get abstracts
+abstracts &lt;- GET(paste0(queryBase,
+                        &quot;efetch.fcgi?db=pubmed&amp;id=&quot;,
+                        uidStr,
+                        &quot;&amp;retmode=xml&quot;))
+
+# extract abstract text from xml
+absXml &lt;- content(abstracts)
+absNodes &lt;- xml_find_all(absXml, &quot;//Abstract&quot;)
+titleNodes &lt;- xml_find_all(absXml, &quot;//ArticleTitle&quot;)
+
+absTbl &lt;- tibble(text = paste(xml_text(titleNodes), xml_text(absNodes)),
+                 absNum = 1:length(absNodes))
+
+# Tokenize abstracts -----------------------------------------------------------
+data(&quot;stop_words&quot;) # words to remove, like &quot;and&quot; and &quot;the&quot;
+
+# add additional stop_words
+stop_words &lt;- tibble(word = c(&quot;ii&quot;, &quot;ru&quot;, &quot;2&quot;, &quot;10&quot;, &quot;100&quot;, &quot;000g&quot;,&quot;intra&quot;, &quot;ple&quot;, 
+                              &quot;tio2&quot;, &quot;ppii&quot;, &quot;zro2&quot;, &quot;ru&quot;), 
+                     lexicon = &quot;WEF&quot;) %&gt;% 
+  full_join(stop_words, by = c(&quot;word&quot;, &quot;lexicon&quot;))
+  
+
+wordTokens &lt;- absTbl %&gt;% 
+  unnest_tokens(word, text, token = &quot;words&quot;) %&gt;%
+  count(word, sort = T) %&gt;%
+  anti_join(stop_words, by = c(&quot;word&quot;))
+
+# Make word cloud --------------------------------------------------------------
+# adapted from: http://www.sthda.com/english/wiki/text-mining-and-word-cloud-fundamentals-in-r-5-simple-steps-you-should-know
+
+cols &lt;- colorRampPalette(c(&quot;black&quot;, &quot;steelblue&quot;))(8)
+
+wordcloud(words = wordTokens$word,
+          freq = wordTokens$n, 
+          scale = c(4, 0.25),
+          min.freq = 2,
+          max.words=500, 
+          random.order=F, 
+          rot.per=0.35, 
+          colors=cols)</code></pre>
+<div class="figure" style="text-align: center"><span id="fig:wordcloud"></span>
+<img src="/wordcloud_files/figure-html/wordcloud-1.png" alt="*A word cloud from the titles and abstracts of my publications*" width="624" />
+<p class="caption">
+Figure 1: <em>A word cloud from the titles and abstracts of my publications</em>
+</p>
+</div>
+
+</section>
+
+<hr class="headLine">
+<p style="text-align: center;">&copy; 2018 Will Fondrie
+<br>
+<a href="#top"><i class="far fa-arrow-alt-circle-up icon-link fa-1x" aria-hidden="true"></i></a>
+</p>
+
+
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-78640578-1', 'auto');
+ga('send', 'pageview');
+</script>
+<script async src='//www.google-analytics.com/analytics.js'></script>
+
+
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+</body>
+</html>
+
