@@ -5,8 +5,7 @@ I'm a Postdoctoral Fellow working on the computational side of mass spectrometry
 My PhD research was performed under [Dudley Strickland](http://www.medschool.umaryland.edu/profiles/Strickland-Dudley/) and [David Goodlett](http://goodlettlab.org/) at the University of Maryland, Baltimore. There I worked on experimental and computational methods for gaining biological insight from mass spectrometery data. This included several biological domains, such as protein-protein interactions, exosome biology and identifying microbial pathogens.  
 
 Here's a word cloud from the titles and abstracts of my publications (and a link to the [code](/wordcloud.html) used to generate it):  
-![](static/wordcloud_files/wordcloud-1.png)  
-
+![](/static/wordcloud_files/wordcloud-1.png)  
 
 
 Outside of science I enjoy good coffee, the outdoors, playing banjo, and riding my [fixed-gear](https://en.wikipedia.org/wiki/Fixed-gear_bicycle) around town. 
