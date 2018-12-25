@@ -103,7 +103,7 @@ ul#horizontal-list li {
 }
 
 .effect a::before {
-	margin-right: 5px;
+	margin-right: 1px;
 	content: '[';
 	-webkit-transform: translateX(20px);
 	-moz-transform: translateX(20px);
@@ -111,7 +111,7 @@ ul#horizontal-list li {
 }
 
 .effect a::after {
-	margin-left: 5px;
+	margin-left: 1px;
 	content: ']';
 	-webkit-transform: translateX(-20px);
 	-moz-transform: translateX(-20px);
