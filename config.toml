@@ -1,57 +1,83 @@
-baseurl = "/"
-publishDir = "docs"
-title = "Will Fondrie, a postdoc in the Noble lab at the UW"
-author = "Will Fondrie"
-canonifyurls = true
-languagecode = "en"
-theme = "hugo-tanka"
-
-googleAnalytics = "UA-78640578-1"
-disqusShortname = ""
-disable_mathjax = false
-
-pygmentscodefences = true
-pygmentsUseClasses = true
-
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+baseURL = "/"
+publishDir = "docs"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Will Fondrie"
+theme = "recluse"
+rssLimit = 10  # Maximum number of items in the RSS feed.
+copyright = "" # This message is only used by the RSS template.
+enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
+googleAnalytics = "UA-78640578-1"
+#disqusShortname = "wfondre"
+canonifyurls = true
+
+[author]
+  name = "Will Fondrie"
+
+[blackfriday]
+  hrefTargetBlank = true
+
+[taxonomies]
+  tag = "tags"
+  category = ""  # Categories are disabled by default.
 
 [permalinks]
   post = "/:year/:month/:title/"
 
 [params]
-  sitename = "Will Fondrie"
-  a_color = "#80B1D3"
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
 
-[[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
+  # Metadata mostly used in document's head
+  description = "A computational biologist informing mass spectrometry with machine learning."
+  # images = [""]
+  themeColor = "#494f5c"
 
-[[menu.main]]
-    name = "Pubs"
-    url = "/pubs/"
-    weight = 2
+  homeSubtitle = "Computational Mass Spectrometry"
+  footerCopyright = "&#183;"
+  # bgImg = ""  # Homepage background-image URL
 
-[[menu.main]]
-    name = "Talks"
-    url = "/talks/"
-    weight = 3
+  # Toggle this option need to rebuild SCSS, requires extended version of Hugo
+  justifyContent = false  # Set "text-align: justify" to .content.
+
+  # Add custom css
+  customCSS = ["css/custom.css"]
+
+  [[params.social]]
+    name = "twitter"
+    url = "https://twitter.com/wfondrie"
+
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/wfondrie"
     
-[[menu.main]]
+  [[params.social]]
+    name = "scholar"
+    url = "https://scholar.google.com/citations?user=sagQuRkAAAAJ"
+
+[menu]
+
+  [[menu.main]]
+    name = "Posts"
+    url = "post/"
+    weight = 10
+
+  [[menu.main]]
+    name = "About"
+    url = "about/"
+    weight = 20
+
+  [[menu.main]]
+    name = "Publications"
+    url = "/pubs/"
+    weight = 30
+
+  [[menu.main]]
     name = "Software"
     url = "/software/"
-    weight = 3
+    weight = 40
 
-#[[menu.main]]
-#    name = "Blog"
-#    url = "/post/"
-#    weight = 4
 
-    
-## Social Accounts
-[params.social]
-    github = "wfondrie"
-    linkedin = "wfondrie"
-    twitter = "wfondrie"
-    gScholar = "sagQuRkAAAAJ" # Google Scholar
-    #stackoverflow = "<username>"

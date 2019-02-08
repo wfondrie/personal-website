@@ -1,0 +1,26 @@
+---
+title: ggplot2 theme
+author: ~
+date: '2019-01-24'
+slug: ggplot2-theme
+categories: []
+tags: []
+comments: no
+images: ~
+---
+
+# Testing ggplot themes  
+Theme 1: minimal with dark bg
+```{r echo=TRUE}
+suppressMessages(library(tidyverse, quietly = TRUE))
+source("../../R/theme_blog.R")
+
+theme_set(theme_blog())
+
+mtcars %>%
+    ggplot(aes(x = mpg, y = hp)) +
+    geom_point(color = theme_colors$fg) +
+    ggtitle("A Cool Plot")
+```
+
+

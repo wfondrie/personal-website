@@ -1,0 +1,18 @@
+name = "Recluse"
+license = "MIT"
+licenselink = "https://github.com/wfondrie/recluse/LICENSE"
+description = "A modification of the Hugo theme, Hermit"
+homepage = "https://github.com/wfondrie/recluse"
+tags = ["blog", "minimal", "dark", "responsive"]
+features = [
+  "single column",
+  "featured image",
+  "social icons",
+  "google analytics",
+  "disqus"
+]
+min_version = 0.43
+
+[author]
+  name = "wfondrie"
+  homepage = "https://willfondrie.com"

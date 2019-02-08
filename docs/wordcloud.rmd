@@ -1,4 +1,5 @@
 ---
+
 ---
 Here's the code to make my word cloud:
 
@@ -10,7 +11,9 @@ suppressMessages(library(tidyverse, quietly = T)) # hide startup message
 library(tidytext, quietly = T)
 library(httr, quietly = T)
 library(xml2, quietly = T)
-library(wordcloud, quietly = T)
+library(wordcloud2, quietly = T)
+library(webshot)
+library(htmlwidgets)
 
 set.seed(9621) # for reproducibility
 
@@ -46,27 +49,23 @@ data("stop_words") # words to remove, like "and" and "the"
 stop_words <- tibble(word = c("ii", "ru", "2", "10", "100", "000g","intra", "ple", 
                               "tio2", "ppii", "zro2", "ru"), 
                      lexicon = "WEF") %>% 
-  full_join(stop_words, by = c("word", "lexicon"))
+    full_join(stop_words, by = c("word", "lexicon"))
   
 
 wordTokens <- absTbl %>% 
-  unnest_tokens(word, text, token = "words") %>%
-  count(word, sort = T) %>%
-  anti_join(stop_words, by = c("word"))
+    unnest_tokens(word, text, token = "words") %>%
+    count(word, sort = T) %>%
+    anti_join(stop_words, by = c("word")) %>%
+    rename("freq"="n") %>%
+    filter(freq >= 2)
 
 # Make word cloud --------------------------------------------------------------
-# adapted from: http://www.sthda.com/english/wiki/text-mining-and-word-cloud-fundamentals-in-r-5-simple-steps-you-should-know
+cols <- colorRampPalette(c("#c6cddb", "#018574"))(nrow(wordTokens))
 
-cols <- colorRampPalette(c("black", "steelblue"))(8)
-
-wordcloud(words = wordTokens$word,
-          freq = wordTokens$n, 
-          scale = c(4, 0.25),
-          min.freq = 2,
-          max.words=500, 
-          random.order=F, 
-          rot.per=0.35, 
-          colors=cols)
+wordcloud2(data = wordTokens,
+           color = cols,
+           backgroundColor = "#494f5c",
+           size = 0.5)
 
 ```
 
