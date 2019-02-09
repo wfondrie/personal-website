@@ -1,3 +1,7 @@
+---
+blank: "blank"
+---
+
 # Peer-Reviewed Publications
 ```{r, echo=F, warning=F, results='asis'}
 # Load packages ----------------------------------------------------------------
