@@ -257,7 +257,7 @@ xcorr %>%
 ```
 
 [^3]: From Eng JK, *et. al*. **(2008)** A fast SEQUEST cross correlation algorithm. J Proteome Res. [Link](https://pubs.acs.org/doi/pdf/10.1021/pr800420s).
-[^4]: Plus any reprocessing that was done.  
+[^4]: Plus any preprocessing that was done.  
 [^5]: The bin size is controlled by Comet's "fragment_bin_tol" parameter.  
 [^6]: It's worth noting that, although calculating the cross-correlation across all of the offsets is useful for understanding how xcorr works, the equation above describes a faster way to calculate it.  A mass spectrum can be preprocessed by subtracting the mean intensities at all of the offsets. Then a single dot product between the preprocessed mass spectrum and the theoretical peptide mass spectrum yields the xcorr score, which is made possible because of the distributive property of the dot product.
 

@@ -80,4 +80,8 @@ canonifyurls = true
     url = "/software/"
     weight = 40
 
+  [[menu.main]]
+    name = "CV"
+    url = "fondrie_cv.pdf"
+
 
