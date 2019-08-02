@@ -1,3 +1,8 @@
+---
+---
+
+<img src="/images/avatar.jpg" alt="Avatar" class="avatar">  
+
 ## Hi, I'm Will. 
 
 I'm a computational biologist working as a postdoctoral fellow in [Bill Noble's

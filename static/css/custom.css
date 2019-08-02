@@ -1,8 +1,8 @@
-.avatar {
+img.avatar {
     border-radius: 50%;
     max-width: 200px;
     height: auto;
-    border: 3px solid #333;
+    border: 3px solid #c6cddb;
 }
 
 b {
