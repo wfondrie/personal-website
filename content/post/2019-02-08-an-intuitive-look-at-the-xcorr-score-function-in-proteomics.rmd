@@ -25,6 +25,7 @@ source("../../R/theme_blog.R")
 theme_set(theme_blog())
 my_pal = c(theme_colors$fg, theme_colors$hl)
 #set.seed(1251)
+RNGkind(sample.kind = "Rounding") # Needed for reproducibility in R 3.6.0+
 set.seed(1)
 
 bg_peaks = 200

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 2700 1410" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-33.8359,13.0625)">
+        <g transform="matrix(1,0,0,1,1.97128,40)">
+            <g transform="matrix(1,0,0,1,365.17,754.486)">
+                <g transform="matrix(1,0,0,1,1531.64,-114.961)">
+                    <path d="M771.603,326.91C771.603,272.77 727.649,228.816 673.509,228.816L352.66,228.816C298.52,228.816 254.566,272.77 254.566,326.91L254.566,523.098C254.566,577.237 298.52,621.192 352.66,621.192L673.509,621.192C727.649,621.192 771.603,577.237 771.603,523.098L771.603,326.91Z" style="fill:none;stroke:rgb(198,205,219);stroke-width:16.67px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-55.0843,-61.076)">
+                    <text x="1963.74px" y="363.101px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:58.333px;fill:rgb(198,205,219);">P<tspan x="1993.54px 2025.35px " y="363.101px 363.101px ">er</tspan>colator</text>
+                    <text x="1899.07px" y="421.434px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:58.333px;fill:rgb(198,205,219);">R<tspan x="1930.66px 1962.48px " y="421.434px 421.434px ">e-</tspan>scored PSMs</text>
+                </g>
+            </g>
+            <g transform="matrix(1,0,0,1,641.278,754.486)">
+                <g transform="matrix(1,0,0,1,-158.149,-114.961)">
+                    <path d="M771.603,326.91C771.603,272.77 727.649,228.816 673.509,228.816L352.66,228.816C298.52,228.816 254.566,272.77 254.566,326.91L254.566,523.098C254.566,577.237 298.52,621.192 352.66,621.192L673.509,621.192C727.649,621.192 771.603,577.237 771.603,523.098L771.603,326.91Z" style="fill:none;stroke:rgb(198,205,219);stroke-width:16.67px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,-240.288,-2.87133)">
+                    <text x="461.438px" y="304.896px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:58.333px;fill:rgb(198,205,219);">PSMs from</text>
+                    <text x="379.848px" y="363.23px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:58.333px;fill:rgb(198,205,219);">Database Search</text>
+                </g>
+            </g>
+            <g transform="matrix(0.737747,0,0,1.40562,699.247,584.031)">
+                <path d="M810.108,367.246L810.108,316.435L1697.28,316.435L1697.28,265.624L1911.17,341.84L1697.28,418.057L1697.28,367.246L810.108,367.246Z" style="fill:rgb(1,133,116);"/>
+            </g>
+            <g transform="matrix(1,0,0,1,704.868,777.447)">
+                <g transform="matrix(1,0,0,1,-241.941,-40.0712)">
+                    <text x="1103.28px" y="95.081px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:58.333px;fill:rgb(198,205,219);">P<tspan x="1133.07px 1164.89px " y="95.081px 95.081px ">er</tspan>colator</text>
+                </g>
+                <g transform="matrix(2.58811,0,0,2.58811,-241.754,-42.6637)">
+                    <path d="M476.455,53.248C514.078,52.907 527.533,151.463 527.533,198.452C527.533,245.442 425.267,245.442 425.267,198.452C425.267,151.463 438.831,53.589 476.455,53.248Z" style="fill:rgb(73,79,92);stroke:rgb(198,205,219);stroke-width:4.02px;"/>
+                    <g transform="matrix(1.0094,1.45752e-17,-1.45752e-17,-0.890381,4.46824,255.148)">
+                        <path d="M426.301,83.007C429.498,114.825 434.378,145.959 443.55,175.35L410.916,179.755L426.301,83.007Z" style="fill:rgb(73,79,92);stroke:rgb(198,205,219);stroke-width:4.23px;"/>
+                    </g>
+                    <path d="M440.614,95.097L452.186,98.53L419.246,95.097L440.614,95.097Z" style="fill:rgb(73,79,92);stroke:rgb(198,205,219);stroke-width:4.02px;"/>
+                    <g transform="matrix(1,0,0,1,0,3.48499)">
+                        <path d="M425.267,181.239C459.8,200.25 493.883,199.992 527.533,181.239" style="fill:rgb(73,79,92);stroke:rgb(198,205,219);stroke-width:4.02px;"/>
+                    </g>
+                    <g transform="matrix(1,0,0,1,50.9389,-1.04959)">
+                        <ellipse cx="425.461" cy="52" rx="6.215" ry="6.196" style="fill:rgb(73,79,92);stroke:rgb(198,205,219);stroke-width:4.02px;"/>
+                    </g>
+                    <path d="M509.508,86.45C509.508,86.45 522.626,79.367 527.533,86.528C533.822,95.707 524.605,148.662 524.605,148.662L526.768,170.899C526.768,170.899 545.946,93.573 536.147,78.049C528.724,66.289 505.058,76.429 505.058,76.429L509.508,86.45Z" style="fill:rgb(73,79,92);stroke:rgb(198,205,219);stroke-width:4.02px;"/>
+                </g>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,0.874287,-32.043)">
+            <g transform="matrix(1,0,0,1,-158.149,-114.961)">
+                <path d="M771.603,326.91C771.603,272.77 727.649,228.816 673.509,228.816L352.66,228.816C298.52,228.816 254.566,272.77 254.566,326.91L254.566,523.098C254.566,577.237 298.52,621.192 352.66,621.192L673.509,621.192C727.649,621.192 771.603,577.237 771.603,523.098L771.603,326.91Z" style="fill:none;stroke:rgb(198,205,219);stroke-width:16.67px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-240.288,-32.5222)">
+                <text x="491.459px" y="304.896px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:58.333px;fill:rgb(198,205,219);">T<tspan x="518.917px 541.589px " y="304.896px 304.896px ">ra</tspan>ining</text>
+                <text x="461.438px" y="363.23px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:58.333px;fill:rgb(198,205,219);">PSMs from</text>
+                <text x="379.848px" y="421.563px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:58.333px;fill:rgb(198,205,219);">Database Search</text>
+            </g>
+        </g>
+        <g transform="matrix(0.737747,0,0,1.40562,58.8921,-201.152)">
+            <path d="M810.108,367.246L810.108,316.435L1697.28,316.435L1697.28,265.624L1911.17,341.84L1697.28,418.057L1697.28,367.246L810.108,367.246Z" style="fill:rgb(1,133,116);"/>
+        </g>
+        <g transform="matrix(1.5599e-17,0.254751,-1.40562,8.60695e-17,2185.52,298.129)">
+            <path d="M810.108,367.246L810.108,316.435L1291.76,316.435L1291.76,265.624L1911.17,341.84L1291.76,418.057L1291.76,367.246L810.108,367.246Z" style="fill:rgb(1,133,116);"/>
+        </g>
+        <g transform="matrix(1,0,0,1,208.798,-22)">
+            <g transform="matrix(1,0,0,1,-47.7311,-71.4071)">
+                <ellipse cx="1543.96" cy="372.753" rx="193.956" ry="182.909" style="fill:none;stroke:rgb(197,206,219);stroke-width:16.67px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,7.23845,5.40676)">
+                <text x="1414.67px" y="287.708px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:58.333px;fill:rgb(197,206,219);">Static</text>
+                <text x="1412.81px" y="346.041px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:58.333px;fill:rgb(197,206,219);">Model</text>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,64.5129,-7.73586)">
+            <g transform="matrix(1,0,0,1,-241.941,-40.0712)">
+                <text x="1103.28px" y="95.081px" style="font-family:'TrebuchetMS', 'Trebuchet MS', sans-serif;font-size:58.333px;fill:rgb(198,205,219);">P<tspan x="1133.07px 1164.89px " y="95.081px 95.081px ">er</tspan>colator</text>
+            </g>
+            <g transform="matrix(2.58811,0,0,2.58811,-241.754,-42.6637)">
+                <path d="M476.455,53.248C514.078,52.907 527.533,151.463 527.533,198.452C527.533,245.442 425.267,245.442 425.267,198.452C425.267,151.463 438.831,53.589 476.455,53.248Z" style="fill:rgb(73,79,92);stroke:rgb(198,205,219);stroke-width:4.02px;"/>
+                <g transform="matrix(1.0094,1.45752e-17,-1.45752e-17,-0.890381,4.46824,255.148)">
+                    <path d="M426.301,83.007C429.498,114.825 434.378,145.959 443.55,175.35L410.916,179.755L426.301,83.007Z" style="fill:rgb(73,79,92);stroke:rgb(198,205,219);stroke-width:4.23px;"/>
+                </g>
+                <path d="M440.614,95.097L452.186,98.53L419.246,95.097L440.614,95.097Z" style="fill:rgb(73,79,92);stroke:rgb(198,205,219);stroke-width:4.02px;"/>
+                <g transform="matrix(1,0,0,1,0,3.48499)">
+                    <path d="M425.267,181.239C459.8,200.25 493.883,199.992 527.533,181.239" style="fill:rgb(73,79,92);stroke:rgb(198,205,219);stroke-width:4.02px;"/>
+                </g>
+                <g transform="matrix(1,0,0,1,50.9389,-1.04959)">
+                    <ellipse cx="425.461" cy="52" rx="6.215" ry="6.196" style="fill:rgb(73,79,92);stroke:rgb(198,205,219);stroke-width:4.02px;"/>
+                </g>
+                <path d="M509.508,86.45C509.508,86.45 522.626,79.367 527.533,86.528C533.822,95.707 524.605,148.662 524.605,148.662L526.768,170.899C526.768,170.899 545.946,93.573 536.147,78.049C528.724,66.289 505.058,76.429 505.058,76.429L509.508,86.45Z" style="fill:rgb(73,79,92);stroke:rgb(198,205,219);stroke-width:4.02px;"/>
+            </g>
+        </g>
+    </g>
+</svg>
