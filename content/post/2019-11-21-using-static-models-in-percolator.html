@@ -1,7 +1,7 @@
 ---
 title: Using Static Models in Percolator
 author: ~
-date: '2019-11-21'
+date: '2019-11-23'
 slug: using-static-models-in-percolator
 categories: []
 tags: []
@@ -11,16 +11,16 @@ images: ~
 
 
 
-<p><em>I’ve written this blog post as a short companion piece to our <a href="https://doi.org/10.1101/849331">newest manuscript</a>, “A machine learning strategy that leverages large datasets to boost statistical power in small-scale experiments” which is now available on bioRxiv.</em></p>
+<p><em>I’ve written this blog post as a short companion piece to my <a href="https://doi.org/10.1101/849331">newest manuscript</a>, “A machine learning strategy that leverages large datasets to boost statistical power in small-scale experiments,” which is now available on bioRxiv. This post assumes you have a basic familiarity with proteomics database searches, Percolator, and using a command line.</em></p>
 <p><a href="http://percolator.ms">Percolator</a> is a post-processing tool that improves the sensitivity of peptide detection in proteomics experiments using a semi-supervised machine learning algorithm. In a nutshell, Percolator learns how to combine different features from your database search results to better discriminate between good and bad PSMs.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> In this post I’m going to describe how to use the new “static model” operating mode for Percolator and mention some best practices to follow. Let’s get started!</p>
 <div id="what-are-static-models" class="section level2">
 <h2>What are static models?</h2>
-<p>Normally, Percolator dynamically learns its models from the dataset you wish to analyze by executing its algorithm in a 3-fold cross-validation scheme<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>: the dataset is split into three parts, where two parts are used to train a model and the held-out part is re-scored using the learned model. This approach is robust for the normal size of proteomics experiments, but we observed that it may lead to unwanted variability and reduced power when experiments are small.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+<p>Normally, Percolator dynamically learns its models from the dataset you wish to analyze by executing its algorithm in a 3-fold cross-validation scheme<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>: the dataset is split into three parts, where two parts are used to train a model and the held-out part is re-scored using the learned model. The good news is that these details are taken care of internally by Percolator, making it easy to analyze an experiment (Figure 1). This dynamic modeling approach is robust for the normal size of proteomics experiments, but may lead to unwanted variability and reduced power when experiments are small.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 <div class="figure">
 <img src="/images/std_percolator.svg" alt="" />
 <p class="caption"><em>Figure 1. How a Percolator analysis is normally performed.</em></p>
 </div>
-<p>As an alternative, we’ve implemented support for a more traditional machine learning paradigm within Percolator: learn a model from a training dataset and use it to evaluate a new experiment. This is what we call the “static model” approach, because the model is unaltered after it is learned. Static models allow you to use a large training dataset to learn a good model and apply it to new experiments. This approach is particularly useful when an experiment is too small to robustly use Percolator’s normal, dynamic modeling method. Additionally, static models can be helpful when maximum consistency between experiments is needed, because the same Percolator model can be used to evaluate multiple experiments.</p>
+<p>As an alternative, we’ve implemented support for a more traditional machine learning paradigm within Percolator: learn a model from a training dataset and use it to evaluate a new experiment (Figure 2). This is what we call the “static model” approach, because the model is unaltered after it is learned. Static models allow you to use a large training dataset to learn a good model and apply it to new experiments. This approach is particularly useful when an experiment is too small to robustly use Percolator’s normal, dynamic modeling method. Additionally, static models are useful when experiments need to be analzyed in a consistent manner, because the same Percolator model can be used evaluate multiple experiments.</p>
 <div class="figure">
 <img src="/images/static_percolator.svg" alt="" />
 <p class="caption"><em>Figure 2. How a Percolator analysis is performed with static models.</em></p>
@@ -67,7 +67,7 @@ crux percolator test.txt</code></pre>
 </div>
 <div id="conclusions" class="section level2">
 <h2>Conclusions</h2>
-<p>Hopefully, you now know what a static model is in the context of Percolator, as well as how to create and use them. If you want more details on situations when static models can be beneficial, you should definitely check out <a href="https://doi.org/10.1101/849331">our manuscript</a>. Also, if a detailed post on how Percolator works sounds interesting, please let me know.</p>
+<p>Hopefully, you now know what a static model is in the context of Percolator, as well as how to create and use them. If you want more details on situations when static models can be beneficial, you should definitely check out <a href="https://doi.org/10.1101/849331">the manuscript</a>. Also, if a detailed post on how Percolator works sounds interesting, please let me know.</p>
 </div>
 <div class="footnotes">
 <hr />
