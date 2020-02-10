@@ -47,7 +47,7 @@ cofirst <- c("26378940")
 authors <- tibble(path = xml_path(xml_find_all(pubs, "//LastName")),
                   lastName = xml_text(xml_find_all(pubs, "//LastName")),
                   initials = xml_text(xml_find_all(pubs, "//Initials"))) %>%
-    mutate(articleNum = as.numeric(str_match(path, "PubmedArticle\\[(.)\\]")[ , 2]),
+    mutate(articleNum = as.numeric(str_match(path, "PubmedArticle\\[(.+?)\\]")[ , 2]),
            fullName = paste(lastName, initials),
            fullName = ifelse(lastName == "Fondrie", 
                              paste0("**", fullName, "**"),
@@ -88,8 +88,8 @@ output <- citations %>%
 years <- unique(output$year)
 
 noRet <- lapply(years, function(y, dat) {
-    cat("\n")
-    cat(paste0("## ", y, "  \n"))
+    #cat("\n")
+    #cat(paste0("## ", y, "  \n"))
     
     op <- dat %>%
         filter(year == y)
