@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/fondrie_cv"
+  to = "https://vigilant-perlman-46cb9b.netlify.com/fondrie_cv.pdf"
+  status = 200
+  force = true
