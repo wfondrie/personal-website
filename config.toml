@@ -75,10 +75,10 @@ canonifyurls = true
     url = "/pubs/"
     weight = 30
 
-  [[menu.main]]
-    name = "Software"
-    url = "/software/"
-    weight = 40
+  #[[menu.main]]
+  #  name = "Software"
+  #  url = "/software/"
+  #  weight = 40
 
   [[menu.main]]
     name = "CV"
