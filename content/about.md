@@ -5,14 +5,15 @@
 
 ## Hi, I'm Will. 
 
-I'm a computational biologist working as a postdoctoral fellow in [Bill Noble's
-lab](https://noble.gs.washington.edu) in the University of Washington Department
-of Genome Sciences. My research primarily focuses on employing machine learning
-to make sense of mass spectrometry data (including, but not limited to
-proteomics). I received my PhD in 2018 from the University of Maryland,
-Baltimore, under the direction of [Dudley
+I’m a postdoctoral fellow mentored by [Bill
+Noble](https://noble.gs.washington.edu) in the University of Washington
+Department of Genome Sciences. My research is at the interface of machine
+learning and mass spectrometry, where I have developed machine learning methods
+to analyze proteomics and other mass spectrometry data. I received my PhD in
+2018 from the University of Maryland, Baltimore, under the direction of [Dudley
 Strickland](http://www.medschool.umaryland.edu/profiles/Strickland-Dudley/) and
-[David Goodlett](http://goodlettlab.org/).  
+[David Goodlett](http://goodlettlab.org/).
+
 
 Outside of science I enjoy good coffee, being outside, playing banjo, and riding
 my [fixed-gear](https://en.wikipedia.org/wiki/Fixed-gear_bicycle) around town. 

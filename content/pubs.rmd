@@ -53,7 +53,7 @@ authors <- tibble(path = xml_path(xml_find_all(pubs, "//LastName")),
                              paste0("**", fullName, "**"),
                              fullName)) %>%
     group_by(articleNum) %>%
-    summarize(authors = paste(fullName, collapse = ", "))
+    summarize(authors = paste(fullName, collapse = ", "), .groups = "drop")
 
 citations <- pubDat %>% full_join(authors, by = "articleNum")
 
