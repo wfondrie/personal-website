@@ -68,7 +68,7 @@ canonifyurls = true
 
   [[menu.main]]
     name = "Publications"
-    url = "/pubs/"
+    url = "pubs/"
     weight = 30
 
   #[[menu.main]]
@@ -77,8 +77,14 @@ canonifyurls = true
   #  weight = 40
 
   [[menu.main]]
+    name = "Posters"
+    url = "posters/"
+    weight = 40
+
+  [[menu.main]]
     name = "CV"
     url = "fondrie_cv.pdf"
+    weight = 50
 
 [markup]
   [markup.goldmark]
