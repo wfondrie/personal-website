@@ -3,7 +3,7 @@ baseURL = "/"
 publishDir = "docs"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = "Will Fondrie"
+title = "William E Fondrie"
 theme = "recluse"
 rssLimit = 10  # Maximum number of items in the RSS feed.
 copyright = "" # This message is only used by the RSS template.
@@ -13,7 +13,7 @@ googleAnalytics = "UA-78640578-1"
 canonifyurls = true
 
 [author]
-  name = "Will Fondrie"
+  name = "William E Fondrie"
 
 [blackfriday]
   hrefTargetBlank = true
@@ -28,7 +28,7 @@ canonifyurls = true
   dateformNumTime = "2006-01-02 15:04:05 MST"
 
   # Metadata mostly used in document's head
-  description = "A postdoctoral fellow who develops machine learning methods for mass spectrometry."
+  description = "Will is a postdoctoral fellow working with Bill Noble in the Univerisity of Washington Department of Genome Sciences."
   # images = [""]
   themeColor = "#494f5c"
 
