@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /fondrie_cv.pdf
