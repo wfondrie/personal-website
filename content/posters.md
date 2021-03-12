@@ -1,6 +1,11 @@
 # Recent Posters
 
-[ISMB 2020](#ismb-2020), [US HUPO 2020](#us-hupo-2020), [ASMS 2019](#asms-2019)
+[US HUPO 2021](#us-hupo-2021) [ISMB 2020](#ismb-2020), [US HUPO 2020](#us-hupo-2020), [ASMS 2019](#asms-2019)
+
+## US HUPO 2021
+For this digital conference, I decided to try a "dark mode" poster.  
+
+[![US HUPO 2021 poster](/posters/2021_US_HUPO.png)](/posters/2021_US_HUPO.png)
 
 ---
 
