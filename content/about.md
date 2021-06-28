@@ -5,12 +5,17 @@
 
 ## Hi, I'm Will. 
 
-I’m a postdoctoral fellow mentored by [Bill
+I am the Senior Data Scientist at [Talus Bioscience](https://talus.bio). At
+Talus, I am building a research program that leverages machine learning methods
+to boost the throughput and reliability of mass spectrometry measurements for
+proteomics experiments. We can apply these methods to improve the speed and
+quality of our data acquisition, enabling us to rapidly find new drugs
+that target previously untargetable gene regulatory proteins. 
+
+Previously, I was a postdoctoral fellow mentored by [Bill
 Noble](https://noble.gs.washington.edu) in the University of Washington
-Department of Genome Sciences. My research is at the interface of machine
-learning and mass spectrometry, where I have developed machine learning methods
-to analyze proteomics and other mass spectrometry data. I received my PhD in
-2018 from the University of Maryland, Baltimore, under the direction of [Dudley
+Department of Genome Sciences. I received my PhD in 2018 from the University of
+Maryland, Baltimore, under the direction of [Dudley
 Strickland](http://www.medschool.umaryland.edu/profiles/Strickland-Dudley/) and
 [David Goodlett](http://goodlettlab.org/).
 
