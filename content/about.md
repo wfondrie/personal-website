@@ -25,13 +25,12 @@ my [fixed-gear](https://en.wikipedia.org/wiki/Fixed-gear_bicycle) around town.
 
 Want to get in touch? Reach me at one of the social platforms below or shoot me
 an email at
-wfo<b>I</b>ndrie<b>don't</b>@<b>want</b>u<b>spam!</b>w<b>So</b>.<b>please</b>e<b>leave</b>d<b>me</b>u<b>alone
-robots.</b>
+wfo<b>I</b>ndrie<b>don't</b>@<b>want</b>t<b>spam!</b>alus<b>So</b>.<b>please</b>b<b>leave</b>i<b>me</b>o<b>alonerobots.</b>
 
 ## About This Site.  
 The posts here are an eclectic mix of things related to my research and hobbies.
 You'll likely find a mix of tutorials, paper highlights, and observations about
-proteomics, mass spectrometery, data science, and machine learning. All opinions
+proteomics, mass spectrometry, data science, and machine learning. All opinions
 and views expressed on this site are my own and do not represent the views of my
 employer.  
 
