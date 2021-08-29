@@ -28,7 +28,7 @@ canonifyurls = true
   dateformNumTime = "2006-01-02 15:04:05 MST"
 
   # Metadata mostly used in document's head
-  description = "Will is a postdoctoral fellow working with Bill Noble in the Univerisity of Washington Department of Genome Sciences."
+  description = "Will is a Senior Data Scientist at Talus Bioscience."
   # images = [""]
   themeColor = "#494f5c"
 
@@ -80,11 +80,16 @@ canonifyurls = true
     name = "Posters"
     url = "posters/"
     weight = 40
+    
+  #[[menu.main]]
+  #  name = "Talks"
+  #  url = "talks/"
+  #  weight = 50
 
   [[menu.main]]
     name = "CV"
     url = "fondrie_cv.pdf"
-    weight = 50
+    weight = 60
 
 [markup]
   [markup.goldmark]
