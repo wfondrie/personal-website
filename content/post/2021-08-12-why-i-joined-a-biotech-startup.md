@@ -1,7 +1,7 @@
 ---
 title: Why I Joined a Biotech Startup
 author: William E Fondrie
-date: '2021-09-05'
+date: '2021-09-06'
 slug: why-i-joined-a-biotech-startup
 categories: []
 tags: []
