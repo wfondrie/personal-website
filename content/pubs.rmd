@@ -1,8 +1,8 @@
 ---
+title: "Peer-Reviewed Publications"
 blank: "blank"
 ---
 
-# Peer-Reviewed Publications
 ```{r, echo=F, warning=F, results='asis'}
 # Load packages ----------------------------------------------------------------
 suppressMessages(library(tidyverse, quietly = T)) # hide startup message
