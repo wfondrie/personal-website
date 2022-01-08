@@ -4,22 +4,35 @@
 @import "animate.scss";
 
 /* WEF additions */
+.hdr-wrapper div {
+  overflow-x: initial;
+}
+
+div {
+  overflow-x: auto;
+}
+
 li {
-    margin: 0 0 20px 0;
+  margin: 0 0 20px 0;
 }
 
 a {
-    word-break: normal;
+  word-break: normal;
 }
 
 h1 {
-    font-family: $headings;
+  font-family: $headings;
 }
 
 strong>em {
-    font-style:normal;
-    font-weight:strong;
-    text-decoration:underline;
+  font-style:normal;
+  font-weight:strong;
+  text-decoration:underline;
+}
+
+
+.hljs {
+  background: $dark-grey;
 }
 
 /* Webkit Scrollbar Customize */
@@ -60,29 +73,32 @@ pre tt {
 }
 
 pre {
-  padding: .7em 1.1em;
+  //padding: 1em 1em;
   overflow: auto;
   font-size: .9em;
   line-height: 1.5;
   letter-spacing: normal;
   white-space: pre;
-  color: #eee;
-  // background: $midnightblue;
-  border-radius: 4px;
+  background: #ab8362;
+  border-radius: 10px;
+  border-color: $dark-grey;
+  border-width: 8px;
+  border-style: solid;
   // -webkit-overflow-scrolling: touch;
 
   code {
     padding: 0;
     margin: 0;
-    background: $midnightblue;
+    background: $dark-grey;
+    border-radius: 0
   }
 }
 
 code {
-  color: #eee;
-  background: $highlight-grey;
-  border-radius: 3px;
-  padding: 0 3px;
+  color: $text;
+  background: $dark-grey;
+  border-radius: 4px;
+  padding: 2px 4px;
   margin: 0 4px;
   word-wrap: break-word;
   letter-spacing: normal;
@@ -128,6 +144,9 @@ hr {
 }
 
 table {
+  line-height: 1;
+  font-size: 0.9em;
+  white-space: nowrap;
   border-collapse: collapse;
   border-spacing: 0;
   empty-cells: show;
@@ -136,13 +155,15 @@ table {
 
   th,
   td {
-    padding: 1.5%;
-    border: 1px solid;
+    padding: 0.5em;
+    border: 2px solid;
+    border-color: $text;
   }
 
   th {
     font-weight: 700;
     vertical-align: bottom;
+    background: $dark-grey;
   }
 }
 

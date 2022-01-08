@@ -92,6 +92,18 @@ canonifyurls = true
     weight = 60
 
 [markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = false
+    guessSyntax = false
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = false
+    noClasses = false
+    style = 'monokai'
+    tabWidth = 4
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
