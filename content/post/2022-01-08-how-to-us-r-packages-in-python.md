@@ -1,17 +1,8 @@
----
-title: How to use R packages in Python
-author: William E. Fondrie
-date: "2022-01-08"
-slug: how-to-use-r-packages-in-python
-categories: []
-tags: []
-comments: no
-images: ~
----
+# How to use R packages in Python
 
-As a data scientist working with biological data, the programming language I use on a daily basis is Python. However, I sometimes find myself needing to use an R package, such as those provided by  [Bioconductor](https://www.bioconductor.org/). For me this is most often the excellent [MSstats](https://msstats.org/) R package for anlayzing mass spectrometry proteomics data that was from Meena Choi ([@MeenaChoi](https://twitter.com/MeenaChoi)) and Olga Vitek's lab ([@olgavitek](https://twitter.com/olgavitek)). Although it has always been possible to write R scripts alongside my Python scripts and Jupyter notebooks, I find it cumbersome to switch back and forth between them, particularly when it involves generating unnecessary intermediate files.
+As a data scientist working with biological data, the programming language I use on a daily basis is Python. However, I sometimes find myself needing to use an R package, such as those provided by  [Bioconductor](https://www.bioconductor.org/). For me this is most often the excellent [MSstats](https://msstats.org/) R package from Meena Choi ([@MeenaChoi](https://twitter.com/MeenaChoi)) and folks in Olga Vitek's lab ([@olgavitek](https://twitter.com/olgavitek)). Although it has always been possible to write R scripts alongside my Python scripts and Jupyter notebooks, I find it cumbersome to switch back and forth between them, particularly when it involves generating unnecessary intermediate files.
 
-In this post I'll show you how I use the MSstats R package from within a Python script or Jupyter notebook, providing an example for how you can use the occasional R package in your own analyses. This post will assume that you're comfortable programming in Python and that you're familiar with the Pandas, NumPy, and Matplotlib Python packages.[^1] Additionally, I'll assume that you have some familiarity with R programming, since you're reading this post. I'll be using mass spectrometry proteomics data as an example, but understanding it is not critical for learning from this post.
+In this post I'll show you how I use the MSstats R package from within a Python script or Jupyter notebook, providing an example for how you can use the occasional R package in your own analyses. This post will assume that you're comfortable programming in Python and that you're familiar with the Pandas, NumPy, and Matplotlib Python packages.[^1] Additionally, I'll assume that you have some familiarity with R programming, since you're reading this post. I'll be using proteomics data as an example, but understanding it is not critical for learning from this post.
 
 [^1]:If these are not familiar and you want to learn, I recommend the ["Plotting and Programming in Python"](http://swcarpentry.github.io/python-novice-gapminder/) Software Carpentry course. 
 
