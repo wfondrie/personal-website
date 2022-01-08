@@ -1,4 +1,14 @@
-# How to use R packages in Python
+---
+title: How to Use R Packages in Python
+author: William E Fondrie
+date: '2022-01-08'
+slug: how-to-use-r-packages-in-python
+categories: []
+tags: []
+toc: no
+images: ~
+---
+
 
 As a data scientist working with biological data, the programming language I use on a daily basis is Python. However, I sometimes find myself needing to use an R package, such as those provided by  [Bioconductor](https://www.bioconductor.org/). For me this is most often the excellent [MSstats](https://msstats.org/) R package from Meena Choi ([@MeenaChoi](https://twitter.com/MeenaChoi)) and folks in Olga Vitek's lab ([@olgavitek](https://twitter.com/olgavitek)). Although it has always been possible to write R scripts alongside my Python scripts and Jupyter notebooks, I find it cumbersome to switch back and forth between them, particularly when it involves generating unnecessary intermediate files.
 
@@ -701,7 +711,7 @@ plt.show()
 
 
     
-![png](/post/2022-01-08-how-to-us-r-packages-in-python_files/2022-01-08-how-to-us-r-packages-in-python_22_0.png)
+![png](/post/2022-01-08-how-to-use-r-packages-in-python_files/2022-01-08-how-to-use-r-packages-in-python_22_0.png)
     
 
 
