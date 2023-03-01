@@ -3,10 +3,6 @@ title: My Year in Books
 author: William E Fondrie
 date: '2023-03-01'
 slug: my-year-in-books
-categories: []
-tags: []
-toc: no
-images: ~
 ---
 
 I thought it might be helpful to share my, hopefully spoiler-free, thoughts on the books I've read over the past year or so. 

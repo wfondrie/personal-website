@@ -1,22 +1,9 @@
 ---
 title: Using Static Models in Percolator
-author: ~
+author: William E. Fondrie
 date: '2019-11-23'
 slug: using-static-models-in-percolator
-categories: []
-tags: []
-comments: no
-images: ~
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(warning = FALSE, 
-                      message = FALSE, 
-                      echo = FALSE,
-                      dpi = 100,
-                      fig.width = 9)
-
-```
 
 *I've written this blog post as a short companion piece to my [newest manuscript](https://doi.org/10.1101/849331), "A machine learning strategy that leverages large datasets to boost statistical power in small-scale experiments," which is now available on bioRxiv. This post assumes you have a basic familiarity with proteomics database searches, Percolator, and using a command line.*
 

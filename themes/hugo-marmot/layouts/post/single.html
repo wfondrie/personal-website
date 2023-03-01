@@ -1,4 +1,4 @@
-{{ partialCached "header.html" . }}
+{{ partial "header.html" . }}
 <div class="article-meta">
     <span class="article-title"><h1>{{ .Title | markdownify }}</h1></span>
     <span>{{ .Date.Format "2006-01-02" }}</span>
