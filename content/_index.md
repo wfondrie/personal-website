@@ -25,8 +25,8 @@ The posts here will always be free of ads and never behind a paywall.
 Unless otherwise noted, all content is licensed as [CC-BY-NC](https://creativecommons.org/licenses/by-nc/2.0/).
 
 
-This site is powered by [Hugo](https://gohugo.io/) and [Quarto](https://quarto.org/) It uses my custom
-[Marmot](https://github.com/wfondrie/hugo-marmot) theme. 
+This site is powered by [Hugo](https://gohugo.io/) and [Quarto](https://quarto.org/). 
+It uses my custom [Marmot](https://github.com/wfondrie/hugo-marmot) theme. 
 
 If you find my blog posts helpful or entertaining, please consider [buying me a coffee](https://www.buymeacoffee.com/wfondrie).
 Your support helps me know that folks are actually enjoying my posts and motivates me to write more! 
