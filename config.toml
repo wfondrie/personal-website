@@ -1,16 +1,12 @@
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-baseURL = "/"
+baseurl = "/"
 publishDir = "docs"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "William E Fondrie"
-theme = "recluse"
-rssLimit = 10  # Maximum number of items in the RSS feed.
-copyright = "" # This message is only used by the RSS template.
-enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/functions/emojify/
+theme = "hugo-marmot"
 googleAnalytics = "UA-78640578-1"
-#disqusShortname = "wfondre"
-canonifyurls = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "\\.qmd$", "\\.ipynb$", "\\.py$"]
+footnotereturnlinkcontents = "↩"
 
 [author]
   name = "William E Fondrie"
@@ -22,74 +18,39 @@ canonifyurls = true
   post = "/:year/:month/:title/"
 
 [params]
-  dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 2"
-  dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04:05 MST"
+  name = "William E Fondrie"
+  description = "Data Science @ Talus Bio"
+  footer = """\
+    &copy; [William E. Fondrie](https://willfondrie.com) 2018--{Year}\
+    """
+  buyMeACoffee = "wfondrie"
 
-  # Metadata mostly used in document's head
-  description = "Will is a Senior Data Scientist at Talus Bioscience."
-  # images = [""]
-  themeColor = "#494f5c"
-
-  homeSubtitle = "Computational Mass Spectrometry"
-  footerCopyright = "&#183;"
-  # bgImg = ""  # Homepage background-image URL
-
-  # Toggle this option need to rebuild SCSS, requires extended version of Hugo
-  justifyContent = false  # Set "text-align: justify" to .content.
-
-  # Add custom css
-  customCSS = ["css/custom.css"]
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/wfondrie"
 
   [[params.social]]
     name = "twitter"
     url = "https://twitter.com/wfondrie"
 
   [[params.social]]
-    name = "github"
-    url = "https://github.com/wfondrie"
-    
+    name = "mastodon"
+    url = "https://genomic.social/@wfondrie"
+
   [[params.social]]
-    name = "scholar"
+    name = "Scholar"
     url = "https://scholar.google.com/citations?user=sagQuRkAAAAJ"
 
-[menu]
-
+[menus]
   [[menu.main]]
+    name = "Me"
+    url = "/"
+    weight = 1
+
+ [[menu.main]]
     name = "Posts"
     url = "post/"
-    weight = 10
-
-  [[menu.main]]
-    name = "About"
-    url = "about/"
-    weight = 20
-
-  [[menu.main]]
-    name = "Publications"
-    url = "pubs/"
-    weight = 30
-
-  #[[menu.main]]
-  #  name = "Software"
-  #  url = "/software/"
-  #  weight = 40
-
-  [[menu.main]]
-    name = "Posters"
-    url = "posters/"
-    weight = 40
-    
-  #[[menu.main]]
-  #  name = "Talks"
-  #  url = "talks/"
-  #  weight = 50
-
-  [[menu.main]]
-    name = "CV"
-    url = "fondrie_cv.pdf"
-    weight = 60
+    weight = 2
 
 [markup]
   [markup.highlight]

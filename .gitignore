@@ -7,6 +7,7 @@
 *.Rproj
 
 *.tar.gz
+.hugo_build.lock
 
 envs/*
 docs/*
@@ -73,3 +74,5 @@ vignettes/*.pdf
 /*_files/
 
 # End of https://www.toptal.com/developers/gitignore/api/r,hugo
+
+/.quarto/
