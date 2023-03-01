@@ -1,0 +1,24 @@
+{{ partial "header.html" . }}
+
+
+{{ .Content }}
+
+<h2>Recent Posts</h2>
+<div class="posts-group">
+	<ul class="posts-list">
+    {{- range ( where site.RegularPages "Section" "post" | first 5 ) }}
+		<li class="post-item">
+      <span class="article-button">
+      <a class="pure-button" href="{{.Permalink}}">
+				<span>{{.Title}}</span>
+        <span class="article-meta">
+          {{ .Date.Format "2006-01-02" }}, ~{{ .ReadingTime }} min
+        </span>
+			</a>
+      </span>
+		</li>
+		{{- end }}
+	</ul>
+</div>
+
+{{ partial "footer.html" . }}

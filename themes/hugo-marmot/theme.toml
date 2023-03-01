@@ -1,0 +1,12 @@
+name = "Marmot"
+license = "MIT"
+licenselink = "https://github.com/wfondrie/hugo-marmot/blob/master/LICENSE.md"
+description = "A mimimalist, monospace blogging theme."
+homepage = "https://willfondrie.com"
+tags = ["minimal", "blog", "personal", "clean", "simple", "starter", "minimalist", "monospace"]
+features = ["blog"]
+min_version = "0.18"
+
+[author]
+  name = "William E Fondrie"
+  homepage = "https://willfondrie.com"

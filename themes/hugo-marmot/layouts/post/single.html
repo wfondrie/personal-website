@@ -1,0 +1,30 @@
+{{ partialCached "header.html" . }}
+<div class="article-meta">
+    <span class="article-title"><h1>{{ .Title | markdownify }}</h1></span>
+    <span>{{ .Date.Format "2006-01-02" }}</span>
+    <span>~{{ .ReadingTime }} MIN READ</span>
+</div>
+
+<main>
+    {{ .Content }}
+    <div class="article-nav">
+        {{ if .PrevInSection }}
+        <span class="article-button prev-button">
+            <a class="pure-button" href="{{ .PrevInSection.Permalink }}">
+                <span><-</span>
+                <span>Prev</span>
+            </a>
+        </span>
+        {{ end }}
+        {{ if .NextInSection }}
+        <span class="article-button next-button">
+            <a class="pure-button" href="{{ .NextInSection.Permalink }}">
+                <span>Next</span>
+                <span>-></span>
+            </a>
+        </span>
+        {{ end }}
+    </div>
+</main>
+
+{{ partialCached "footer.html" . }}

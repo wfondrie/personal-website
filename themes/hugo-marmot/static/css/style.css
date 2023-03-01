@@ -1,0 +1,477 @@
+:root {
+    --dark-color: #000000;
+    --light-color: #EEEEEE;
+    --accent-color: #24B8A0;
+    --bg-color: #1d1f21;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+h1, h2, h3 {
+    color: var(--accent-color);
+    word-break: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+h2 {
+    margin-top: 1.6em;
+    margin-bottom: 0.1em;
+}
+
+body {
+    color: var(--light-color);
+    word-break: normal;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+ul {
+    list-style: "-> "
+}
+
+table {
+    display: block;
+    white-space: nowrap;
+    table-layout: auto;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 40px 0;
+    overflow-x: auto;
+    border: none;
+}
+
+th, td {
+    border: 3px solid var(--accent-color);
+    padding: 10px;
+    font-size: 100%;
+    background: var(--bg-color);
+}
+
+.article-title {
+    margin: 2px;
+}
+
+.article-title > h1 {
+    margin-top: 0px;
+    margin-bottom: 3px;
+    padding-bottom: 0.1em;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+
+.article-title::after {
+    content: "";
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+
+hr {
+    margin: 2px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+
+.article-meta {
+    color: var(--accent-color);
+    font-size: 100%;
+    margin-bottom: 3em;
+}
+
+.article-meta > span {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    display: block;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+strong {
+    color: var(--accent-color);
+}
+
+a:hover,
+a:focus {
+    background: var(--accent-color);
+    text-decoration: none;
+    color: var(--light-color);
+}
+
+h3 {
+    font-weight: 100;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+div.avatar img {
+    filter: grayscale(1);
+    border-radius: 50%;
+    display: none;
+}
+
+div.avatar {
+    border-radius: 50%;
+    max-width: 150px;
+    height: auto;
+    border: 3px solid var(--accent-color);
+    display: none;
+}
+
+#layout {
+    padding: 0;
+}
+
+/* Overwrite pure-button */
+.pure-button {
+    text-align: left;
+    max-width: 100%;
+}
+
+.pure-button > span {
+    overflow-wrap: break-word;
+    display: inline-block;
+    max-width: 100%;
+    white-space: normal;
+}
+
+.header {
+    text-align: left;
+    top: auto;
+    padding: 1em 1em 0;
+}
+
+.sidebar {
+    background: var(--dark-color);
+    color: var(--light-color);
+}
+
+.support {
+    width: 100%;
+    color: var(--accent-color);
+    display: none;
+}
+
+.support-footer {
+    color: var(--accent-color);
+    display: block;
+}
+
+.support-tag {
+    font-size: 85%;
+}
+
+.brand-name,
+.brand-description {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.brand-name {
+    font-weight: 400;
+    font-size: 125%;
+    color: var(--light-color);
+}
+
+.brand-description {
+    font-weight: 400;
+    font-size: 85%;
+    color: var(--accent-color);
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.article-nav {
+    margin: 0;
+    height: auto;
+    overflow: auto;
+    display: block;
+}
+
+.nav-item, .article-button {
+    display: inline-block;
+    background: transparent;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.nav-item::before {
+    content: "";
+}
+
+.nav-item a, .article-button a {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--light-color);
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 85%;
+    font-style: normal;
+}
+
+.nav-item a:hover,
+.nav-item a:focus,
+.article-button a:hover,
+.article-button a:focus,
+.article-button a:hover .article-meta,
+.social-list a:focus,
+.social-list a:hover {
+    background: var(--accent-color);
+    text-decoration: none;
+    color: var(--light-color);
+}
+
+.social-list {
+    list-style: none;
+    border-right: 2px solid var(--accent-color);
+    display: none;
+}
+
+.social-item a {
+    background: transparent;
+    color: var(--light-color);
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 0.05em;
+    text-align: right;
+    font-style: normal;
+}
+
+.social-item span {
+    display: block
+}
+
+.social-name {
+    text-transform: uppercase;
+    font-size: 85%;
+}
+
+.next-button {
+    float: right;
+}
+
+.prev-button{
+    float: left;
+}
+
+.content {
+    padding: 1em 1em 0;
+}
+
+.footer {
+    padding: 1em 1m 0;
+    text-align: left;
+}
+
+.copyright {
+    margin-top: 2em;
+    font-size: 85%;
+}
+
+
+/* Post list page formatting: */
+.posts-group {
+    margin-bottom: 1.9em;
+    line-height: normal;
+    max-width: 100%;
+    overflow-wrap: word-wrap;
+}
+
+.posts-group .post-year {
+    padding-top: 16px;
+    margin-right: 1.8em;
+    font-size: 1.6em;
+}
+
+.posts-group .posts-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+}
+
+.posts-group .post-item {
+    display: block;
+}
+
+.posts-group .article-meta{
+    display: block;
+    margin-bottom: 0;
+}
+
+.book {
+    border-left: 2px solid var(--accent-color);
+    margin-top: 1.6em;
+}
+
+.book a {
+    height: 100%;
+    display: block;
+}
+
+.book-info {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 1.8em;
+    height: 100%;
+}
+
+.book-title {
+    font-size: 117%;
+}
+
+/* Responsive */
+@media (min-width: 64em) {
+    .content {
+        padding: 2em 3em 0;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    .header {
+        margin: 10% 2em 0;
+        text-align: right;
+        height: 100%;
+        padding: 0;
+    }
+
+
+    div.avatar img {
+        display: block;
+    }
+
+    div.avatar {
+        display: inline-block;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+    }
+
+    .support {
+        margin-top: 2em;
+        width: 100%;
+        display: block;
+    }
+
+    .support-footer {
+        display: none;
+    }
+
+    .social-list {
+        display: block;
+    }
+}
+
+/* Prism Code Formatting
+ * Based on: https://github.com/PrismJS/prism-themes/blob/master/themes/prism-atom-dark.css
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #c5c8c6;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"],
+pre {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"],
+pre {
+	background: var(--bg-color);
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+.token {
+    color: var(--accent-color);
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #7C7C7C;
+}
+
+.token.punctuation {
+	color: #c5c8c6;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.class-name {
+	text-decoration: underline;
+}
+
+.token.operator {
+	color: #EDEDED;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}

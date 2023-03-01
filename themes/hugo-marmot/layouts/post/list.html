@@ -1,0 +1,25 @@
+{{ partial "header.html" . }}
+
+<h1>{{ .Title | markdownify }}</h1>
+
+{{- range .Data.Pages.GroupByDate "2006" }}
+<div class="posts-group">
+	<div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
+	<ul class="posts-list">
+		{{- range .Pages }}
+		<li class="post-item">
+      <span class="article-button">
+      <a class="pure-button" href="{{.Permalink}}">
+				<span>{{.Title}}</span>
+        <span class="article-meta">
+          {{ .Date.Format "2006-01-02" }}, ~{{ .ReadingTime }} min
+        </span>
+			</a>
+      </span>
+		</li>
+		{{- end }}
+	</ul>
+</div>
+{{- end }}
+
+{{ partial "footer.html" . }}
