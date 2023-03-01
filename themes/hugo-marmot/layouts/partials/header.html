@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{- partial "structured-data.html" . }}
+        <title>{{ .Title }} | {{ .Site.Title }}</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css"/>
+        <link rel="stylesheet" href="{{ "css/style.css" | relURL }}" />
+        <link rel="stylesheet" href="{{ "css/fonts.css" | relURL }}" />
+        {{ partial "head_custom.html" . }}
+    </head>
+
+    <body>
+        <div id="layout" class="pure-g">
+            <div class="sidebar pure-u-1 pure-u-lg-1-5">
+                <div class="header">
+                    <div class="avatar">
+                        <img src="/images/avatar.jpg" alt="Avatar">
+                    </div>
+                    <h1 class="brand-name">{{ .Site.Params.name | markdownify }}</h1>
+                    <h2 class="brand-description">{{ $.Site.Params.description | markdownify }}</h2>
+                    <nav>
+                        <ul class="nav-list">
+                            {{ range .Site.Menus.main }}
+                            <li class="nav-item">
+                                <a class="pure-button" href="{{ .URL | relURL }}">{{ .Name }}</a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </nav>
+                    <ul class="social-list">
+                        {{ range .Site.Params.social }}
+                        <li class="social-item">
+                            <a class="pure-button" href="{{ .url }}" target="_blank">
+                                <span class="social-name">{{ .name }}</span>
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{ with .Site.Params.buyMeACoffee }}
+                    <div class="support">
+                        <div class="support-tag">Enjoyed these posts?</div>
+                        <span class="article-button">
+                            <a class="pure-button" href="https://www.buymeacoffee.com/{{ . }}" target="_blank">
+                                <span>buy me a coffee</span>
+                            </a>
+                        </span>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            <div class="content pure-u-1 pure-u-lg-3-5">

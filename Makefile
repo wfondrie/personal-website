@@ -4,13 +4,8 @@ all: env jupyter serve
 
 ## Install Dependencies
 env: env.yaml
-ifeq (conda env list | grep "\W*$(realpath ./envs)",)
-	conda env create -p ./envs -f env.yaml
-	@echo ">>> New conda env created. Activate with:\nconda activate ./envs"
-else
-	conda env update -p ./envs -f env.yaml --prune
+	CONDA_SUBDIR=osx-64 mamba env update -p ./envs -f env.yaml --prune
 	@echo ">>> Updated conda env. Activate with:\nconda activate ./envs"
-endif
 
 # Serve the website
 serve:
