@@ -3,3 +3,7 @@
   to = "https://vigilant-perlman-46cb9b.netlify.com/fondrie_cv.pdf"
   status = 200
   force = true
+
+[build.environment]
+  HUGO_VERSION = "0.110.0"
+  GO_VERSION = "1.12"
