@@ -3,7 +3,6 @@ publishDir = "docs"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "William E Fondrie"
-theme = "hugo-marmot"
 googleAnalytics = "G-H3G2FE4ZWK"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "\\.qmd$", "\\.ipynb$", "\\.py$"]
 footnotereturnlinkcontents = "↩"
@@ -68,3 +67,7 @@ footnotereturnlinkcontents = "↩"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+[module]
+  [[module.imports]]
+    path = "github.com/wfondrie/hugo-marmot"
