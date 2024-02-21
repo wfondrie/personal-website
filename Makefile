@@ -9,7 +9,7 @@ env: env.yaml
 
 # Serve the website
 serve:
-	R -e "blogdown::serve_site(port=4004)"
+	quarto preview --no-browser
 
 # Convert all Jupyter notebooks:
 jupyter: $(IPYNB_POSTS:.ipynb=.md)

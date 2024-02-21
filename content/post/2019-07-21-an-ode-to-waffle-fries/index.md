@@ -1,9 +1,10 @@
 ---
-title: "An Ode to Waffle Fries"
+title: An Ode to Waffle Fries
 author: William E. Fondrie
 date: '2019-07-21'
 slug: an-ode-to-waffle-fries
 ---
+
 
 My family and I love to eat at Chick-fil-A. While we will forever miss the
 Chick-fil-A Cow Calendar (which was sadly ended in 2018) we have enjoyed their
@@ -32,7 +33,7 @@ largely proportional to the item's dollar value. There are some interesting
 deviations from this though: The three salads require disproportionately more
 points to redeem than the other items.
 
-<img src="index.markdown_strict_files/figure-markdown_strict/cfa_data-1.png" width="800" />
+<img src="index_files/figure-markdown_strict/cfa_data-1.png" width="800" />
 
 ## Waffle fries are king
 
@@ -40,7 +41,7 @@ One thing we can do is look at which items give your points the most purchasing
 power. In this case, the medium waffle fries are the clear winner coming in at
 a value of \$0.01145 per point redeemed.
 
-<img src="index.markdown_strict_files/figure-markdown_strict/items-1.png" width="800" />
+<img src="index_files/figure-markdown_strict/items-1.png" width="800" />
 
 ## Conclusion
 

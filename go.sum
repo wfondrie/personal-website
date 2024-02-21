@@ -1,2 +1,6 @@
 github.com/wfondrie/hugo-marmot v0.0.0-20230302061400-d622e5a1203d h1:7zgqxeWTgUxKojFgd43NofjVLhtm2uVrNVPRxk5OjuE=
 github.com/wfondrie/hugo-marmot v0.0.0-20230302061400-d622e5a1203d/go.mod h1:KfP8t+68RWLWhcs42fDMOK1NMKxeX0Mw2aHBTmZscqI=
+github.com/wfondrie/hugo-marmot v0.0.0-20240220235438-18518e3ea2a0 h1:NwokieAc/RiVre4gzo8l24S9oZEgNr5KtkCZZWkfArI=
+github.com/wfondrie/hugo-marmot v0.0.0-20240220235438-18518e3ea2a0/go.mod h1:KfP8t+68RWLWhcs42fDMOK1NMKxeX0Mw2aHBTmZscqI=
+github.com/wfondrie/hugo-marmot v0.0.0-20240221001617-7a5f2010ac61 h1:LVrXKtwLqARY6q8CXBIe0hOgqiNtC7EqoNWd4khM8VQ=
+github.com/wfondrie/hugo-marmot v0.0.0-20240221001617-7a5f2010ac61/go.mod h1:KfP8t+68RWLWhcs42fDMOK1NMKxeX0Mw2aHBTmZscqI=
