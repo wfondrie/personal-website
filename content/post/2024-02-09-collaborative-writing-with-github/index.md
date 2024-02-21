@@ -175,7 +175,7 @@ In light of them, we have added the following:
 ```
 It's also worth noting that you can add specific formatting to highlight these changes in a different color or indent them.
 
-## 10. Use a `.gitignore` and add the compiled document to it.
+## 10. Use a `.gitignore` and add the compiled document to it
 
 A `.gitignore` specifies what files should not versioned by git. 
 If you aren't already using `.gitingore` files, I recommend generating one with [gitignore.io](https://gitignore.io).
