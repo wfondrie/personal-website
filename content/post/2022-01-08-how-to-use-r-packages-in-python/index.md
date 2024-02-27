@@ -146,6 +146,7 @@ quant_df.head() # View the first five rows
 ```
 
 </details>
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -182,6 +183,7 @@ annot_df.head()
 ```
 
 </details>
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -236,6 +238,7 @@ contrast_df
 ```
 
 </details>
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -366,6 +369,7 @@ results.head()
 ```
 
 </details>
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
