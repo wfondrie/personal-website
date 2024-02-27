@@ -68,9 +68,6 @@ Then click `New` → `Python 3 (ipykernel)` to open a new notebook.
 
 For this post, we're going to reproduce an analysis of the the dataset from [Selevsek et al](https://doi.org/10.1074/mcp.M113.035550) as performed in the [MassIVE.quant paper](https://doi.org/10.1038/s41592-020-0955-0). We'll use Python to download and read the data, process that data with the MSstats R package, then recreate the volcano plot in Figure 2j with Python. Let's start by loading the libraries we'll need into our Python session:
 
-<details class="code-fold">
-<summary>Code</summary>
-
 ``` python
 import ppx
 import numpy as np
@@ -86,14 +83,9 @@ from rpy2.robjects import pandas2ri
 pandas2ri.activate()
 ```
 
-</details>
-
 The [rpy2](https://rpy2.github.io/) Python package will perform the magic that allows us to use R packages in our Python session. The `importr` function give us the power to import R packages and `pandas2ri`---along with the subsequent `pandas2ri.activate()` line---will allow our Pandas DataFrames to be automically converted into R data frames when used as input to an R function.
 
 We also need to set up a plotting style that looks nice on my website:
-
-<details class="code-fold">
-<summary>Code</summary>
 
 ``` python
 # Set plotting theme:
@@ -113,12 +105,7 @@ sns.set_context("talk")
 sns.set_style("ticks", style)
 ```
 
-</details>
-
 Now let's download the dataset from the [MassIVE mass spectrometry data repository](https://massive.ucsd.edu/ProteoSAFe/static/massive.jsp) under the accession RMSV000000251. We'll use the [ppx Python package](https://ppx.readthedocs.io) to do this:
-
-<details class="code-fold">
-<summary>Code</summary>
 
 ``` python
 proj = ppx.find_project("RMSV000000251")
@@ -133,19 +120,12 @@ annot_file = "2019-06-03_mnchoi_bb4aeafb/metadata/Selevsek2015_DIA_Skyline_all_a
 quant_path, annot_path = proj.download([quant_file, annot_file], silent=True)
 ```
 
-</details>
-
 We can then read the proteomics data into our Python session using Pandas:
-
-<details class="code-fold">
-<summary>Code</summary>
 
 ``` python
 quant_df = pd.read_csv(quant_path, dtype={"StandardType": str})
 quant_df.head() # View the first five rows
 ```
-
-</details>
 
 <div>
 <style scoped>
@@ -174,15 +154,10 @@ quant_df.head() # View the first five rows
 
 We also need to read the annotation data using Pandas:
 
-<details class="code-fold">
-<summary>Code</summary>
-
 ``` python
 annot_df = pd.read_csv(annot_path)
 annot_df.head()
 ```
-
-</details>
 
 <div>
 <style scoped>
@@ -211,9 +186,6 @@ annot_df.head()
 
 Finally, we need to create a contrast matrix that will define the comparisons we want to test with MSstats:
 
-<details class="code-fold">
-<summary>Code</summary>
-
 ``` python
 cols = annot_df["Condition"].unique()
 cols.sort()
@@ -236,8 +208,6 @@ contrast_df = pd.DataFrame(
 
 contrast_df
 ```
-
-</details>
 
 <div>
 <style scoped>
@@ -268,21 +238,13 @@ contrast_df
 
 Now for the fun part: let's run MSstats without leaving our Python session. Just like if we were using R directly, we first need to import the libraries that we'll be using. This looks a little different using rpy2, but ultimately we assign the imported R package to a variable that we can use like any other Python package. Here, we import MSstats:
 
-<details class="code-fold">
-<summary>Code</summary>
-
 ``` python
 MSstats = importr("MSstats")
 ```
 
-</details>
-
 Next, we'll perform our MSstats data processing. Note that each of these functions actually call the underlying MSstats R package. The rpy2 Python package does all of the work tranforming our Pandas DataFrames (`quant_df`, `annot_df`, and `contrast_df`) into R data frames that MSstats can use. When each function is complete, it returns an R object. Fortunately, we've setup rpy2 to automatically convert R data frames back into Pandas DataFrames, allowing us to use the results seamlessly. The final output returned by MSstats in this analysis (`results` below) will be a Pandas DataFrame containing the p-values for each protein for contrasts that we specified in our contrast matrix (`contrast_df`).
 
 If you're following along, this next step may take a few minutes. Go ahead and enjoy a cup of coffee or your favorite beverage while it's running.
-
-<details class="code-fold">
-<summary>Code</summary>
 
 ``` python
 raw = MSstats.SkylinetoMSstatsFormat(
@@ -307,8 +269,6 @@ results, *_ = MSstats.groupComparison(
     use_log_file=False,
 )
 ```
-
-</details>
 
     INFO  [2022-01-07 15:30:17] ** Raw data from Skyline imported successfully.
     INFO  [2022-01-07 15:31:07] ** Raw data from Skyline cleaned successfully.
@@ -361,14 +321,9 @@ results, *_ = MSstats.groupComparison(
 
 Now that the process is complete, we can verify that `results` is a Pandas DataFrame containing our MSstats results:
 
-<details class="code-fold">
-<summary>Code</summary>
-
 ``` python
 results.head()
 ```
-
-</details>
 
 <div>
 <style scoped>
@@ -400,9 +355,6 @@ We've successfully run MSstats without leaving our Python session!
 ## Reproduce a figure panel from the paper
 
 The only task left is reproduce a panel from a figure in the MassIVE.quant paper. We'll recreate the volcano plot from Figure 2j and see how close our results are to the original.[^3] However, we'll make this plot using [seaborn](https://seaborn.pydata.org/) and [matplotlib](https://matplotlib.org/) in our Python session!
-
-<details class="code-fold">
-<summary>Code</summary>
 
 ``` python
 # Filter the results for the points we want to plot
@@ -452,8 +404,6 @@ plt.xlim(-4, 4)
 # Show the plot
 plt.show()
 ```
-
-</details>
 
 ![](index_files/figure-markdown_strict/cell-11-output-1.png)
 
