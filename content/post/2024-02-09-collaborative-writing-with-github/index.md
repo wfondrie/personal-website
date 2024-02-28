@@ -1,5 +1,5 @@
 ---
-title: '10 Tips for Writing Collaborative Writing with LaTeX and GitHub'
+title: '10 Tips for Collaborative Writing with LaTeX and GitHub'
 author: 'William E Fondrie'
 date: '2024-02-20'
 slug: 'collaborative-writing-with-latex-and-github'
@@ -64,7 +64,8 @@ all: my_document.pdf # The name of your .tex file.
 
 # A simple cleaning rule to cleanup the directory.
 clean:
-	rm -f \*.bbl *.aux *.blg *.bcf *.out \
+	rm -f \
+		*.bbl *.aux *.blg *.bcf *.out \
 		*.run.xml *.fls *.fdb_latexmk *.xdv \
 		*.lof *.lot *.log
 	rm -rf auto
