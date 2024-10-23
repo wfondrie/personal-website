@@ -11,6 +11,7 @@ In modern scientific research, computational methods play a pivotal role---and i
 Yet, despite the heavy reliance on algorithms and software, code is often not treated with the rigor and expectations of openness as data in many fields.
 Sparked by a recent Twitter/X controversy in the proteomics field, this post explores the importance of open-source software in scientific research and why it’s essential for driving scientific progress.
 It also discusses how folks can commercialize their open-source software to support its continued development.
+It will not discuss why for-profit companies should release open-source software; that'll be a future post.
 
 But first, I'll offend some folks:
 
