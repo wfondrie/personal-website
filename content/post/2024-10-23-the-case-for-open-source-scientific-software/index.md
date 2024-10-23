@@ -13,6 +13,8 @@ Sparked by a recent Twitter/X controversy in the proteomics field, this post exp
 It also discusses how folks can commercialize their open-source software to support its continued development.
 It will not discuss why for-profit companies should release open-source software; that'll be a future post.
 
+Also, as always, these opinions are my own and do not reflect those of my employer.
+
 But first, I'll offend some folks:
 
 ## Computational Papers Without Code Are Just Advertisements
