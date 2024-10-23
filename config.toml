@@ -29,16 +29,12 @@ footnotereturnlinkcontents = "↩"
     url = "https://github.com/wfondrie"
 
   [[params.social]]
-    name = "bluesky"
-    url = "https://bsky.app/profile/willfondrie.com"
-
-  [[params.social]]
     name = "twitter"
     url = "https://twitter.com/wfondrie"
 
   [[params.social]]
-    name = "mastodon"
-    url = "https://genomic.social/@wfondrie"
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/wfondrie/"
 
   [[params.social]]
     name = "Scholar"
