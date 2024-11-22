@@ -25,12 +25,16 @@ footnotereturnlinkcontents = "↩"
   buyMeACoffee = "wfondrie"
 
   [[params.social]]
+    name = "bluesky"
+    url = "https://bsky.app/profile/willfondrie.com"
+
+  [[params.social]]
     name = "github"
     url = "https://github.com/wfondrie"
 
-  [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/wfondrie"
+  #[[params.social]]
+  #  name = "twitter"
+  #  url = "https://twitter.com/wfondrie"
 
   [[params.social]]
     name = "linkedin"
