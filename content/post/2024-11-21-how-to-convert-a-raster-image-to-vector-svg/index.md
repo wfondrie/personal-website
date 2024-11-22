@@ -64,7 +64,7 @@ Tweak it until the design matches your vision!
 ## Wrapping Up
 
 And there you have it—a quick and effective way to convert raster graphics into SVG vector files, all from the comfort of your terminal.
-ImageMagick is pretty powerful and I'll leave it to explore how might create multi-color SVGs rather than sticking with the monochrome version we created here.
+ImageMagick is pretty powerful and I'll leave it to you to explore how might create multi-color SVGs rather than sticking with the monochrome version we created here.
 Whether you’re creating logos, icons, or any other graphic, this workflow is a handy addition to your creative toolkit.
 
 If you enjoyed this post and want more tips like it, [consider buying me a coffee](https://www.buymeacoffee.com/wfondrie) to show your support!
